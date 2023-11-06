@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "Mayestica";
+	src: url("../fonts/Mayestica.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-Regular";
+	src: url("../fonts/Roboto-Regular.ttf");
+}
+
+p{
+    font-family: "Mayestica";
+}
+
+h1 {
+    font-family: "Mayestica";
+	width: 100%;
+	text-align: center;
+	font-size: 48px;
+}
+
+body{
+    background-color: #970ac9;
+}
+
+main{
+    width: 70%;
+    padding: 40px;
+    margin: auto;
+    background-color: #c90aa0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+}
+
+div {
+	width: calc(50% - 40px);
+	height: calc((35vw - 40px) / 16 * 9);/*vw — 1/100 ширины окна, а vh — 1/100 его высоты.*/
+	margin: 20px;
+	background-color: orange;
+	background-position: center;
+	background-size: cover;
+	transition: all 0.5s;
+	box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+}
+
+div:hover {
+	transform: rotate(3deg) scale(1.07);
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.4);
+}
+
+.photo1 {
+    background-color: #144c0a;
+}
+
+.photo2 {
+    background-image: url(../img/081.png);
+}
+
+.photo3 {
+    background-image: url(../img/286977@2x.png);
+}
+
+.photo4 {
+    background-image: url(../img/1.png);
+}
