@@ -187,5 +187,6 @@ button{
         width: 90%;
         margin-bottom: 20px; /* Добавляем отступ снизу */
         padding: 10px; /* Уменьшаем внутренние отступы */
+	    font-size: 150%;
     }
 }
