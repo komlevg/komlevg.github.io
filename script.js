@@ -271,6 +271,504 @@ const bestGamesByGenre = {
   ]
 };
 
+const cuisine_list = [
+    "Italy",
+    "France",
+    "Japan",
+    "China",
+    "India",
+    "Mexico",
+    "Thailand",
+    "Spain",
+    "Greece",
+    "Turkey",
+    "Lebanon",
+    "Peru",
+    "Vietnam",
+    "Korea",
+    "Morocco",
+    "USA",
+    "Russia",
+    "Brazil",
+    "Portugal",
+    "Scandinavia"
+];
+
+const dish_list = [
+    "Italy - Pizza",
+    "Italy - Pasta Carbonara",
+    "Italy - Tiramisu",
+    "France - Croissant",
+    "France - Coq au Vin",
+    "France - Crème Brûlée",
+    "Japan - Sushi",
+    "Japan - Ramen",
+    "Japan - Tempura",
+    "China - Peking Duck",
+    "China - Dim Sum",
+    "China - Kung Pao Chicken",
+    "India - Butter Chicken",
+    "India - Biryani",
+    "India - Samosa",
+    "Mexico - Tacos",
+    "Mexico - Guacamole",
+    "Mexico - Churros",
+    "Thailand - Pad Thai",
+    "Thailand - Tom Yum Soup",
+    "Thailand - Green Curry",
+    "Spain - Paella",
+    "Spain - Gazpacho",
+    "Spain - Churros",
+    "Greece - Moussaka",
+    "Greece - Souvlaki",
+    "Greece - Baklava",
+    "Turkey - Kebabs",
+    "Turkey - Baklava",
+    "Turkey - Meze",
+    "Lebanon - Hummus",
+    "Lebanon - Falafel",
+    "Lebanon - Shawarma",
+    "Peru - Ceviche",
+    "Peru - Lomo Saltado",
+    "Peru - Aji de Gallina",
+    "Vietnam - Pho",
+    "Vietnam - Banh Mi",
+    "Vietnam - Spring Rolls",
+    "Korea - Kimchi",
+    "Korea - Bibimbap",
+    "Korea - Tteokbokki",
+    "Morocco - Tagine",
+    "Morocco - Couscous",
+    "Morocco - Pastilla",
+    "USA - Hamburger",
+    "USA - BBQ Ribs",
+    "USA - Apple Pie",
+    "Russia - Borscht",
+    "Russia - Pelmeni",
+    "Russia - Blini",
+    "Brazil - Feijoada",
+    "Brazil - Pão de Queijo",
+    "Brazil - Brigadeiro",
+    "Portugal - Bacalhau",
+    "Portugal - Pastel de Nata",
+    "Portugal - Francesinha",
+    "Scandinavia - Gravlax",
+    "Scandinavia - Smørrebrød",
+    "Scandinavia - Meatballs"
+];
+
+const springList = [
+    "Japan (Cherry blossoms in full bloom)",
+    "Netherlands (Tulips at Keukenhof)",
+    "Italy (Mild weather, fewer tourists)",
+    "France (Spring landscapes)",
+    "Spain (Warm but not hot)",
+    "Greece (Start of the tourist season)",
+    "USA (Washington, D.C. — cherry blossoms)",
+    "Morocco (Comfortable weather)",
+    "Portugal (Blooming landscapes)",
+    "South Korea (Spring festivals)"
+];
+
+const summerList = [
+    "Croatia (Dalmatian Coast)",
+    "Thailand (Rainy season, but popular resorts)",
+    "Indonesia (Bali)",
+    "Australia (Winter in the Southern Hemisphere, but popular destinations)",
+    "Turkey (Beaches and historical sites)",
+    "Mexico (Vibrant culture and beaches)",
+    "Brazil (Carnival and beaches)",
+    "Vietnam (Beautiful landscapes and beaches)",
+    "Maldives (Tropical paradise)",
+    "South Africa (Wildlife and mild weather)"
+];
+
+const autumnList = [
+    "Canada (Fall foliage)",
+    "Germany (Oktoberfest and autumn forests)",
+    "New Zealand (Spring in the Southern Hemisphere)",
+    "Switzerland (Alpine scenery and mild weather)",
+    "Austria (Charming villages and autumn hikes)",
+    "Norway (Northern Lights and fjords)",
+    "Iceland (Northern Lights and glaciers)",
+    "Argentina (Spring in the Southern Hemisphere)",
+    "Chile (Wine harvest season)",
+    "India (Festivals and pleasant weather)"
+];
+
+const winterList = [
+    "Finland (Northern Lights and snow activities)",
+    "Sweden (Winter wonderland)",
+    "Denmark (Cozy Christmas markets)",
+    "Czech Republic (Prague winter charm)",
+    "Hungary (Thermal baths and winter festivals)",
+    "Russia (Winter landscapes and cultural experiences)",
+    "China (Winter festivals and Great Wall views)",
+    "Egypt (Mild weather and historical sites)",
+    "UAE (Desert adventures and luxury)",
+    "Philippines (Tropical beaches and dry season)"
+];
+
+
+const serialList = [
+    { title: "Во все тяжкие", year: "2008–2013" },
+    { title: "Планета Земля 2", year: "2016" },
+    { title: "BBC: Планета Земля", year: "2006" },
+    { title: "Братья по оружию", year: "2001" },
+    { title: "Чернобыль", year: "2019" },
+    { title: "Прослушка", year: "2002–2008" },
+    { title: "Аватар: Легенда об Аанге", year: "2005–2008" },
+    { title: "Голубая планета 2", year: "2017" },
+    { title: "Сопрано", year: "1999–2007" },
+    { title: "Космос: Пространство и время", year: "2014" },
+    { title: "Космос", year: "1980" },
+    { title: "Наша планета", year: "2019–2023" },
+    { title: "Игра престолов", year: "2011–2019" },
+    { title: "Блуи", year: "2018–" },
+    { title: "Мир в войне", year: "1973–1974" },
+    { title: "Стальной алхимик: Братство", year: "2009–2010" },
+    { title: "BBC: Жизнь", year: "2009" },
+    { title: "Рик и Морти", year: "2013–" },
+    { title: "Последний танец", year: "2020" },
+    { title: "Сумеречная зона", year: "1959–1964" },
+    { title: "Вьетнам", year: "2017" },
+    { title: "Атака титанов", year: "2013–2023" },
+    { title: "Шерлок", year: "2010–2017" },
+    { title: "Бэтмен", year: "1992–1995" },
+    { title: "Аркейн", year: "2021–2024" },
+    { title: "Лучше звоните Солу", year: "2015–2022" },
+    { title: "Офис", year: "2005–2013" },
+    { title: "BBC: Голубая планета", year: "2001" },
+    { title: "Ферма Кларксона", year: "2021–" },
+    { title: "Жульничество 1992: История Харшада Мехты", year: "2020" },
+    { title: "BBC: Планета людей", year: "2011" },
+    { title: "BBC: Замерзшая планета", year: "2011–2012" },
+    { title: "Охотник х Охотник", year: "2011–2014" },
+    { title: "Светлячок", year: "2002–2003" },
+    { title: "Дуракам везет", year: "1981–2003" },
+    { title: "Гражданская война", year: "1990" },
+    { title: "Тетрадь смерти", year: "2006–2007" },
+    { title: "Гравити Фолз", year: "2012–2016" },
+    { title: "Сайнфелд", year: "1989–1998" },
+    { title: "Декалог", year: "1989–1990" },
+    { title: "The Beatles: Get Back", year: "2021" },
+    { title: "Gibi", year: "2021–" },
+    { title: "Настоящий детектив", year: "2014–" },
+    { title: "Ковбой Бибоп", year: "1998–1999" },
+    { title: "Фарго", year: "2014–2024" },
+    { title: "Нэйтан спешит на выручку", year: "2013–2017" },
+    { title: "Личность", year: "2018–" },
+    { title: "Апокалипсис: Вторая мировая война", year: "2009" },
+    { title: "Таскмастер", year: "2015–" },
+    { title: "Африка", year: "2013" },
+    { title: "Провожающая в последний путь Фрирен", year: "2023–" },
+    { title: "Когда они нас увидят", year: "2019" },
+    { title: "Друзья", year: "1994–2004" },
+    { title: "События Прошедшей Недели С Джоном Оливером", year: "2014–" },
+    { title: "В Филадельфии всегда солнечно", year: "2005–" },
+    { title: "Наследники", year: "2018–2023" },
+    { title: "TVF Pitchers", year: "2015–2022" },
+    { title: "Западное крыло", year: "1999–2006" },
+    { title: "Ван-Пис", year: "1999–" },
+    { title: "Умерь свой энтузиазм", year: "2000–2024" },
+    { title: "Монти Пайтон: Летающий цирк", year: "1969–1974" },
+    { title: "Подводная лодка", year: "1985" },
+    { title: "Избранные", year: "2017–" },
+    { title: "Конь БоДжек", year: "2014–2020" },
+    { title: "Отель «Фолти Тауэрс»", year: "1975–1979" },
+    { title: "Лейла и Меджнун", year: "2011–2023" },
+    { title: "Панчаят", year: "2020–" },
+    { title: "Драконий жемчуг Зет", year: "1996–2003" },
+    { title: "Чeрная гадюка 4", year: "1989" },
+    { title: "Гордость и предубеждение", year: "1995" },
+    { title: "Хулиганы и ботаны", year: "1999–2000" },
+    { title: "Твин Пикс", year: "1990–1991" },
+    { title: "Блич: Тысячелетняя кровавая война", year: "2022–" },
+    { title: "Драконий жемчуг Зет", year: "1989–1996" },
+    { title: "Шоу Шаппелла", year: "2003–2006" },
+    { title: "Нарко", year: "2015–2017" },
+    { title: "Копилка", year: "2019–" },
+    { title: "Сага о Винланде", year: "2019–2023" },
+    { title: "Я, Клавдий", year: "1976" },
+    { title: "Фабрика гениев", year: "2019–2021" },
+    { title: "Южный парк", year: "1997–" },
+    { title: "Чёрное зеркало", year: "2011–" },
+    { title: "По ту сторону изгороди", year: "2014" },
+    { title: "Тед Лассо", year: "2020–" },
+    { title: "Вернуться в 1988", year: "2015–2016" },
+    { title: "Острые козырьки", year: "2013–2022" },
+    { title: "Клиент всегда мертв", year: "2001–2005" },
+    { title: "Врата Штейна", year: "2011–2015" },
+    { title: "Люди Икс '97", year: "2024–" },
+    { title: "Рим", year: "2005–2007" },
+    { title: "Тюрьма «ОZ»", year: "1997–2003" },
+    { title: "Мой аджосси", year: "2018" },
+    { title: "Разделение", year: "2022–" },
+    { title: "Берсерк", year: "1997–1998" },
+    { title: "Тьма", year: "2017–2020" },
+    { title: "Дрянь", year: "2016–2019" },
+    { title: "Щит", year: "2002–2008" },
+    { title: "Аббатство Даунтон", year: "2010–2015" },
+    { title: "Одни из нас", year: "2023–" },
+    { title: "Гранд тур", year: "2016–2024" },
+    { title: "Звездный крейсер Галактика", year: "2004–2009" },
+    { title: "Безумцы", year: "2007–2015" },
+    { title: "Голубоглазый самурай", year: "2023–" },
+    { title: "Симпсоны", year: "1989–" },
+    { title: "Пип шоу", year: "2003–2015" },
+    { title: "Звездный путь: Следующее поколение", year: "1987–1994" },
+    { title: "Неуязвимый", year: "2021–" },
+    { title: "Доктор Хаус", year: "2004–2012" },
+    { title: "Наруто: Ураганные хроники", year: "2007–2017" },
+    { title: "Монстр", year: "2004–2005" },
+    { title: "Задержка в развитии", year: "2003–2019" },
+    { title: "Ванпанчмен", year: "2015–" },
+    { title: "Лига справедливости: Без границ", year: "2004–2006" },
+    { title: "Приключения Шерлока Холмса", year: "1984–1985" },
+    { title: "Пацаны", year: "2019–" },
+    { title: "Огни ночной пятницы", year: "2006–2011" },
+    { title: "Махабхарата", year: "1988–1990" },
+    { title: "По долгу службы", year: "2012–2021" },
+    { title: "Удивительная миссис Мэйзел", year: "2017–2023" },
+    { title: "Очень странные дела", year: "2016–2025" },
+    { title: "Топ Гир", year: "2002–2022" },
+    { title: "Гуща событий", year: "2005–2012" },
+    { title: "1883: A Yellowstone Origin Story", year: "2021–2022" },
+    { title: "Полезные советы от Джона Уилсона", year: "2020–2023" },
+    { title: "Это мы", year: "2016–2022" },
+    { title: "Бехзат: Серийные преступления в Анкаре", year: "2010–2019" },
+    { title: "Отец Тед", year: "1995–1998" },
+    { title: "Сарабхай против Сарабхай", year: "2004–2017" },
+    { title: "Кандидаты", year: "2021–" },
+    { title: "Мандалорец", year: "2019–" },
+    { title: "Код Гиас: Bосставший Лелуш", year: "2006–2008" },
+    { title: "Парки и зоны отдыха", year: "2009–2015" },
+    { title: "Секретные материалы", year: "1993–2018" },
+    { title: "Карточный домик", year: "2013–2018" },
+    { title: "Атланта", year: "2016–2022" },
+    { title: "Время приключений", year: "2010–2018" },
+    { title: "Рамаяна", year: "1987–1988" },
+    { title: "Дэдвуд", year: "2004–2006" },
+    { title: "Декстер", year: "2006–2013" },
+    { title: "Корона", year: "2016–2023" },
+    { title: "Это грех", year: "2021" },
+    { title: "Решала", year: "2018–2021" },
+    { title: "Сорвиголова", year: "2015–2018" },
+    { title: "Мост", year: "2011–2018" },
+    { title: "Первобытный", year: "2019–" },
+    { title: "Чeрная гадюка 2", year: "1986" },
+    { title: "Сёгун", year: "2024–2026" },
+    { title: "Одинокий голубь", year: "1989" },
+    { title: "Пингвин", year: "2024" },
+    { title: "Пуаро Агаты Кристи", year: "1989–2013" },
+    { title: "Охотник за разумом", year: "2017–2019" },
+    { title: "Мистер Бин", year: "1990–1995" },
+    { title: "Первый шаг", year: "2000–2002" },
+    { title: "Возвращение Шерлока Холмса", year: "1986–1988" },
+    { title: "Тайны миллиардера", year: "2015–2024" },
+    { title: "Предложение", year: "2022" },
+    { title: "Аварийная посадка любви", year: "2019–2020" },
+    { title: "Волейбол!!", year: "2014–2020" },
+    { title: "Царство падальщиков", year: "2023" },
+    { title: "Гоморра", year: "2014–2021" },
+    { title: "Да, господин министр", year: "1980–1984" },
+    { title: "Поза", year: "2018–2021" },
+    { title: "Чeрная гадюка 3", year: "1987" },
+    { title: "Важнейшие события Второй мировой войны в цвете", year: "2019" },
+    { title: "Энн", year: "2017–2019" },
+    { title: "Больница Питт", year: "2025–" },
+    { title: "Таинственный театр 3000 года", year: "1988–1999" },
+    { title: "Служба новостей", year: "2012–2014" },
+    { title: "Арчер", year: "2009–2023" },
+    { title: "Бюро легенд", year: "2015–2020" },
+    { title: "Ломка", year: "2021" },
+    { title: "Подпольная империя", year: "2010–2014" },
+    { title: "Сорвиголова: Рожденный заново", year: "2025–" },
+    { title: "Чaво с восьмого", year: "1972–1983" },
+    { title: "Критикал рол", year: "2015–" },
+    { title: "Yeh Meri Family", year: "2018–" },
+    { title: "Убойный отдел", year: "1993–1999" },
+    { title: "Юная Лига Справедливости", year: "2010–2022" },
+    { title: "КьюАй. Весьма интересно", year: "2003–" },
+    { title: "Истребитель демонов : Kimetsu no Yaiba", year: "2019–" },
+    { title: "Правосудие", year: "2010–2015" },
+    { title: "Шоу Багса Банни", year: "1960–1975" },
+    { title: "Семьянин", year: "2019–" },
+    { title: "Чем мы занимаемся в тени", year: "2019–2024" },
+    { title: "Драконий жемчуг", year: "1986–1989" },
+    { title: "Призраки дома на холме", year: "2018" },
+    { title: "Лига справедливости", year: "2001–2004" },
+    { title: "Звёздный крейсер Галактика", year: "2003" },
+    { title: "Драконий жемчуг", year: "1995–2003" },
+    { title: "Братья Bентура", year: "2003–2018" },
+    { title: "Индевор", year: "2012–2023" },
+    { title: "Да, господин Премьер-министр", year: "1986–1987" },
+    { title: "Самурай Чамплу", year: "2004–2005" },
+    { title: "Летучие Конкорды", year: "2007–2009" },
+    { title: "Rocket Boys", year: "2022–" },
+    { title: "Ход королевы", year: "2020" },
+    { title: "Компьютерщики", year: "2006–2013" },
+    { title: "Любовь на шестерых", year: "2000–2004" },
+    { title: "Тени над Балканами", year: "2017–2020" },
+    { title: "Создавая Убийцу", year: "2015–2018" },
+    { title: "Медведь", year: "2022–" },
+    { title: "Мистер Робот", year: "2015–2019" },
+    { title: "Эзель", year: "2009–2011" },
+    { title: "Я - Алан Партридж", year: "1997–2002" },
+    { title: "Йеллоустоун", year: "2018–2024" },
+    { title: "Искатели сокровищ", year: "2014–2022" },
+    { title: "Самурай Джек", year: "2001–2017" },
+    { title: "Невозможные шутники", year: "2011–" },
+    { title: "Счастливая долина", year: "2014–2023" },
+    { title: "Долбанутые", year: "1999–2001" },
+    { title: "Магическая битва", year: "2020–" },
+    { title: "Долгий путь вокруг Земли", year: "2004–2010" },
+    { title: "Обычное шоу", year: "2010–2017" },
+    { title: "Спартак: Кровь и песок", year: "2010–2013" },
+    { title: "Так чья сейчас реплика?", year: "1998–2007" },
+    { title: "Шоу Эрика Андре", year: "2012–" },
+    { title: "Девчонки из Дерри", year: "2018–2022" },
+    { title: "Твин Пикс", year: "2017" },
+    { title: "Сыны анархии", year: "2008–2014" },
+    { title: "Моб Психо 100", year: "2016–2022" },
+    { title: "Луи", year: "2010–2015" },
+    { title: "Discovery: Сквозь пространство и время с Морганом Фрименом", year: "2010–2017" },
+    { title: "Офис", year: "2001–2003" },
+    { title: "Евангелион", year: "1995–1996" },
+    { title: "Парни из Трейлерпарка", year: "2001–2018" },
+    { title: "Алхимия душ", year: "2022–2023" },
+    { title: "Спартак: Боги арены", year: "2011" },
+    { title: "Шиттс Крик", year: "2015–2020" },
+    { title: "Моя гениальная подруга", year: "2018–2024" },
+    { title: "Заднепроходнее отверстие", year: "1997–2001" },
+    { title: "Кремниевая долина", year: "2014–2019" },
+    { title: "Стыд", year: "2015–2017" },
+    { title: "Бесстыжие", year: "2011–2021" },
+    { title: "Бродяга Кэнсин: Воспоминания", year: "1999" },
+    { title: "Формула 1: Гонять, чтобы выживать", year: "2019–" },
+    { title: "Стальной алхимик", year: "2003–2004" },
+    { title: "Футурама", year: "1999–" },
+    { title: "Пространство", year: "2015–2022" },
+    { title: "Север и Юг", year: "2004" },
+    { title: "Ганнибал", year: "2013–2015" },
+    { title: "О всех созданиях - больших и малых", year: "2020–" },
+    { title: "Доктор Кто", year: "2005–2022" },
+    { title: "Европейская сторона", year: "2004–2009" },
+    { title: "Необычный адвокат", year: "2022" },
+    { title: "Тени", year: "2014–2019" },
+    { title: "Уэнтуорт", year: "2013–2021" },
+    { title: "С Земли на Луну", year: "1998" },
+    { title: "Война Фойла", year: "2002–2015" },
+    { title: "Гинтама", year: "2005–2021" },
+    { title: "Леттеркенни", year: "2016–2023" }
+];
+
+const boardGamesList = [
+    // Классические и вечные
+    "Chess",
+    "Backgammon",
+    "Go",
+    "Scrabble",
+
+    // Семейные и для вечеринок
+    "Carcassonne",
+    "Catan",
+    "Ticket to Ride",
+    "Dixit",
+    "Alias",
+    "Imaginarium",
+
+    // Стратегии и евроигры
+    "Terra Mystica",
+    "Swinus",
+    "7 Wonders",
+    "Everdell",
+    "War of the Ring",
+
+    // Кооперативные игры
+    "Pandemic",
+    "Arkham Horror",
+    "Gloomhaven",
+
+    // Для вечеринок и больших компаний
+    "Mafia",
+    "Codenames",
+    "EkiVoki",
+    "Jenga",
+    "Monopoly",
+
+    // Для любителей экшена и дуэлей
+    "Blood Rage",
+    "Nemesis",
+    "Undervault",
+
+    // Лёгкие и быстрые игры
+    "Kingdomino",
+    "Splendor",
+    "Patchwork",
+    "Set"
+];
+
+function generateBoardGame() {
+    const randomIndex = Math.floor(Math.random() * boardGamesList.length);
+    const boardGame = boardGamesList[randomIndex];
+    document.getElementById('randomgame').innerText = boardGame;
+}
+
+function generateSerial() {
+    const randomIndex = Math.floor(Math.random() * serialList.length);
+    const serial = serialList[randomIndex];
+
+    const to_show = `
+    ${serial.title}
+    ${serial.year}
+    `;
+
+    document.getElementById('randommovie').innerText = to_show;
+}
+
+
+function generateCountryForSpring() {
+    const randomIndex = Math.floor(Math.random() * springList.length);
+    const countryForSpring = springList[randomIndex];
+    document.getElementById('randomtravel').innerText = countryForSpring;
+}
+
+function generateCountryForSpring() {
+    const randomIndex = Math.floor(Math.random() * springList.length);
+    const countryForSpring = springList[randomIndex];
+    document.getElementById('randomtravel').innerText = countryForSpring;
+}
+
+function generateCountryForSummer() {
+    const randomIndex = Math.floor(Math.random() * summerList.length);
+    const countryForSummer = summerList[randomIndex];
+    document.getElementById('randomtravel').innerText = countryForSummer;
+}
+
+function generateCountryForAutumn() {
+    const randomIndex = Math.floor(Math.random() * autumnList.length);
+    const countryForAutumn = autumnList[randomIndex];
+    document.getElementById('randomtravel').innerText = countryForAutumn;
+}
+
+function generateCountryForWinter() {
+    const randomIndex = Math.floor(Math.random() * winterList.length);
+    const countryForWinter = winterList[randomIndex];
+    document.getElementById('randomtravel').innerText = countryForWinter;
+}
+
+function generateDish() {
+    const randomIndex = Math.floor(Math.random() * dish_list.length);
+    const dish = dish_list[randomIndex];
+    document.getElementById('randomcuisine').innerText = dish;
+}
+
+function generateCuisine() {
+    const randomIndex = Math.floor(Math.random() * cuisine_list.length);
+    const cuisine = cuisine_list[randomIndex];
+    document.getElementById('randomcuisine').innerText = cuisine;
+}
 
 
 function generateBook() {
@@ -286,7 +784,7 @@ function generateMovie() {
     document.getElementById('randommovie').innerText = movie;
 }
 
-function generateGame() {
+function generatePCGame() {
     const genres = Object.keys(bestGamesByGenre); // Получаем все ключи (жанры)
     const randomGenre = genres[Math.floor(Math.random() * genres.length)]; // Случайный жанр
     const games = bestGamesByGenre[randomGenre]; // Игры из выбранного жанра
@@ -295,3 +793,69 @@ function generateGame() {
     document.getElementById('randomgame').innerText = randomGame;
 }
 
+const todoInput = document.getElementById('todoInput');
+const addBtn = document.getElementById('addBtn');
+const randomBtn = document.getElementById('randomBtn');
+const clearBtn = document.getElementById('clearBtn');
+const todoList = document.getElementById('todoList');
+const randomTodo = document.getElementById('randomTodo');
+
+// Массив для хранения дел
+const todos = [];
+
+// Добавление дела в список
+addBtn.addEventListener('click', () => {
+    const todoText = todoInput.value.trim();
+    if (todoText === '') {
+        alert('Введите дело!');
+        return;
+    }
+
+    todos.push(todoText);
+
+    // Обновляем отображение списка дел
+    const li = document.createElement('li');
+    li.textContent = todoText;
+    todoList.appendChild(li);
+
+    // Очищаем поле ввода
+    todoInput.value = '';
+});
+
+// Выбор случайного дела
+randomBtn.addEventListener('click', () => {
+    if (todos.length === 0) {
+        alert('Список дел пуст!');
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * todos.length);
+    const selectedTodo = todos[randomIndex];
+    randomTodo.textContent = `Случайное дело: ${selectedTodo}`;
+});
+
+// Очистка списка дел
+clearBtn.addEventListener('click', () => {
+    if (todos.length === 0) {
+        alert('Список дел уже пуст!');
+        return;
+    }
+
+    // Очищаем массив
+    todos.length = 0;
+
+    // Очищаем визуальное представление списка
+    todoList.innerHTML = '';
+
+    // Сбрасываем сообщение о случайном деле
+    randomTodo.textContent = '';
+
+    alert('Список дел успешно очищен!');
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const styles = ["shadow-dance-text", "melting-text"];
+    const randomStyle = styles[Math.floor(Math.random() * styles.length)];
+    document.getElementById("randomH1").classList.add(randomStyle);
+});
