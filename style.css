@@ -10,7 +10,6 @@ h1{
     text-transform: uppercase;
 	text-align: center;
 	padding-top: 2%;
-
 	  font-family: "Nabla", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -19,6 +18,7 @@ h1{
     "EDPT" 100,
     "EHLT" 12;
 }
+
 
 main{
      background-image: url(img/dices.png);
@@ -39,82 +39,49 @@ main{
           flex-wrap: wrap;
 }
 
+.hide nav{
+    display: none;
+}
+
+
 .books{
     background-image: url(img/books.png);
     width: 30%;
     height: 600px;
     padding: 1%;
-    border-radius: 10px;
+    border-radius: 25px;
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 }
 
-.movies{
-        backdrop-filter: blur(15px);
-     width: 30%;
+.movies, .games, .travel, .cuisine, .users{
+    backdrop-filter: blur(15px);
+    width: 30%;
     height: 600px;
     padding: 1%;
-    border-radius: 10px;
-
+    border-radius: 25px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 }
 
 
-.games{
-        backdrop-filter: blur(15px);
-     width: 30%;
-    height: 600px;
+#randombook, #randommovie, #randomgame, #randomtravel, #randomcuisine, #white_for_users{
+    border-radius: 10px;
+    background: #f2ccff;
     padding: 1%;
-    border-radius: 10px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    font-size: 150%;
+    margin-bottom: 50%;
+    min-height: 100px;
+    text-align: center;
 }
+
 
 button{
     margin: auto;
 }
-
-
-#randombook{
-    border-radius: 10px;
-    background: white;
-    padding: 1%;
-    font-size: 150%;
-    margin-bottom: 50%;
-    min-height: 100px;
-
-    	text-align: center;
-}
-
-#randommovie{
-    border-radius: 10px;
-    background: white;
-    padding: 1%;
-    font-size: 150%;
-    margin-bottom: 50%;
-    min-height: 100px;
-
-        	text-align: center;
-}
-
-
-#randomgame{
-    border-radius: 10px;
-    background: white;
-    padding: 1%;
-    font-size: 150%;
-    margin-bottom: 50%;
-    min-height: 100px;
-
-        	text-align: center;
-}
-
 
 .glow-on-hover {
             margin-top: auto; /* Кнопка будет внизу блока */
@@ -178,15 +145,240 @@ button{
     100% { background-position: 0 0; }
 }
 
+
+@keyframes animate {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.container {
+	position: relative;
+	top: 80px;
+	transform: skewY(-20deg);
+	animation: animate 5s linear infinite;
+	.cube {
+		position: relative;
+		z-index: 2;
+		&:nth-child(2) {
+			z-index: 1;
+			translate: -60px -60px;
+		}
+		&:nth-child(3) {
+			z-index: 3;
+			translate: 60px 60px;
+		}
+		div {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			translate: calc(-70px * var(--x)) calc(-60px * var(--y));
+			span {
+				position: relative;
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background: #dcdcdc;
+				z-index: calc(1 * var(--i));
+				transition: 1.5s;
+				&:hover {
+					transition: 0s;
+					background: #ef4149;
+					filter: drop-shadow(0 0 30px #ef4149);
+					&:before,
+					&:after {
+						transition: 0s;
+						background: #ef4149;
+					}
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					left: -40px;
+					width: 40px;
+					height: 100%;
+					background: #fff;
+					transform-origin: right;
+					transform: skewY(45deg);
+					transition: 1.5s;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					top: -40px;
+					left: 0px;
+					width: 100%;
+					height: 40px;
+					background: #f2f2f2;
+					transform-origin: bottom;
+					transform: skewX(45deg);
+					transition: 1.5s;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+    bottom: 0;        Прижимаем к низу экрана */
+    /*z-index: 1000;    Убедимся, что меню поверх других элементов */
+
 @media (max-width: 1080px) {
+
     main {
         padding: 1% 1%;
     }
 
-    .books, .movies, .games {
+    h1{
+        margin-top: 15%;
+    }
+
+    .hide nav{
+        display: block;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        /*bottom: 0;*/
+    }
+
+    .books, .movies, .games, .travel, .cuisine, .users{
         width: 90%;
         margin-bottom: 20px; /* Добавляем отступ снизу */
         padding: 10px; /* Уменьшаем внутренние отступы */
 	    font-size: 150%;
+    }
+}
+
+
+.shadow-dance-text {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+    }
+}
+
+
+.melting-text-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.melting-text {
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    animation: melt 3s infinite ease-in-out;
+    background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.melting-text::before,
+.melting-text::after {
+    content: 'MELTING';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: -1;
+    transform: scaleY(1);
+    opacity: 0.5;
+    animation: drip 3s infinite ease-in-out;
+}
+
+.melting-text::after {
+    filter: blur(10px);
+    opacity: 0.3;
+}
+
+/* Keyframes for melting effect */
+@keyframes melt {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes drip {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1.5);
+        opacity: 0.7;
+    }
+}
+
+
+.wave-text span {
+    display: inline-block;
+    font-size: 4rem;
+    animation: wave 2s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.wave-text span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.wave-text span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.wave-text span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.wave-text span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.wave-text span:nth-child(6) {
+    animation-delay: 1.0s;
+}
+.wave-text span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.wave-text span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.wave-text span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+.wave-text span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+.wave-text span:nth-child(11) {
+    animation-delay: 2s;
+}
+
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }
