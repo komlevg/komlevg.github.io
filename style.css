@@ -81,6 +81,7 @@ main{
 
 button{
     margin: auto;
+    padding-top: 3%;
 }
 
 .glow-on-hover {
@@ -372,6 +373,7 @@ button{
 .wave-text span:nth-child(11) {
     animation-delay: 2s;
 }
+
 
 @keyframes wave {
     0%, 100% {
