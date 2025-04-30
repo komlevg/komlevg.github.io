@@ -79,10 +79,9 @@ main{
 }
 
 
-button{
+/*button{
     margin: auto;
-    padding-top: 3%;
-}
+}*/
 
 .glow-on-hover {
             margin-top: auto; /* Кнопка будет внизу блока */
