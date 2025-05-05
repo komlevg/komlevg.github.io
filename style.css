@@ -238,14 +238,19 @@ button{
         margin-top: 15%;
     }
 
+    .glow-on-hover{
+         width: 90%;
+         font-size: 200%;
+    }
+
     .hide nav{
         display: block;
         width: 100%;
         position: fixed;
         z-index: 10;
         /*bottom: 0;*/
-	font-size: 300%;
-	padding: 15px 30px;
+        font-size: 300%;
+        padding: 15px 30px;
     }
 
     .books, .movies, .games, .travel, .cuisine, .users{
