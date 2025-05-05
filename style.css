@@ -244,6 +244,7 @@ button{
         position: fixed;
         z-index: 10;
         /*bottom: 0;*/
+	font-size: 300%;
     }
 
     .books, .movies, .games, .travel, .cuisine, .users{
