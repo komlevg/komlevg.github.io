@@ -245,6 +245,7 @@ button{
         z-index: 10;
         /*bottom: 0;*/
 	font-size: 300%;
+	padding: 15px 30px;
     }
 
     .books, .movies, .games, .travel, .cuisine, .users{
