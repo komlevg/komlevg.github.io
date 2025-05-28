@@ -831,7 +831,7 @@ randomBtn.addEventListener('click', () => {
 
     const randomIndex = Math.floor(Math.random() * todos.length);
     const selectedTodo = todos[randomIndex];
-    randomTodo.textContent = `Случайное дело: ${selectedTodo}`;
+    randomTodo.textContent = `Random item: ${selectedTodo}`;
 });
 
 // Очистка списка дел
