@@ -1,3 +1,182 @@
+const travel_jan_feb = [
+    "Thailand (dry season, cool temps, islands at their best)",
+    "Maldives (peak season, calm seas, perfect visibility)",
+    "Sri Lanka (west/south coasts dry, cultural triangle accessible)",
+    "Mexico (dry season, Yucatán perfect, whale watching Baja)",
+    "Costa Rica (dry season, both coasts accessible, wildlife active)",
+    "South Africa (summer, Cape Town beaches, safari green season)",
+    "New Zealand (peak summer, long days, all roads open)",
+    "Australia (summer, Tasmania ideal, Great Barrier Reef calm)",
+    "Chile/Argentina (Patagonia summer, trekking prime time)",
+    "Philippines (dry season, island hopping optimal, fewer typhoons)"
+];
+
+const travel_mar_apr = [
+    "Japan (cherry blossoms, mild temps, festivals everywhere)",
+    "Vietnam (north/central dry, rice terraces flooded, Ha Long clear)",
+    "Morocco (spring bloom, desert comfortable, mountains green)",
+    "Jordan (wildflowers, Petra perfect temps, Dead Sea swimming)",
+    "Israel/Palestine (spring bloom, mild, religious festivals)",
+    "Portugal (wildflowers, mild, pre-summer crowds, Algarve swimming)",
+    "Spain (Andalucía bloom, Seville feria, comfortable sightseeing)",
+    "Turkey (Istanbul tulips, Cappadocia ballooning, coast warming)",
+    "Greece (wildflowers, Orthodox Easter, islands waking up)",
+    "California/US Southwest (desert bloom, Yosemite waterfalls peak)"
+];
+
+const travel_may_jun = [
+    "Iceland (midnight sun, puffins, highlands opening, mild temps)",
+    "Norway (fjords green, midnight sun north, hiking season starts)",
+    "Scotland (long days, heather later, midges not yet bad)",
+    "Ireland (long days, green, festivals start, wild coast)",
+    "Alaska (midnight sun, wildlife, Denali accessible, glaciers)",
+    "Canadian Rockies (turquoise lakes thawed, hiking, bears active)",
+    "Peru (dry season, Machu Picchu clear, Inca Trail optimal)",
+    "Bolivia (dry, Salar de Uyuni mirror effect, high altitude clear)",
+    "Mongolia (naadam prep, steppe green, ger camps open, mild)",
+    "Kenya/Tanzania (post-long rains, green, wildebeest gathering)"
+];
+
+const travel_jul_aug = [
+    "Indonesia (dry season, Bali/Lombok/Komodo perfect, diving prime)",
+    "Malaysia (east coast dry, Perhentians/Tioman best visibility)",
+    "Mongolia (Naadam festival, warmest temps, steppe at peak green)",
+    "Kyrgyzstan (high passes open, trekking prime, yurt stays)",
+    "Tajikistan (Pamir Highway open, Wakhan corridor accessible)",
+    "Georgia (Caucasus trekking, wine harvest starts, Tusheti open)",
+    "Armenia (highlands accessible, apricot season, festivals)",
+    "Albania (Riviera prime, mountains cool, fewer crowds than Croatia)",
+    "Montenegro (coast + mountains, Bay of Kotor, Durmitor hiking)",
+    "Faroe Islands (midnight light, puffins, hiking, dramatic weather)"
+];
+
+const travel_sep_oct = [
+    "Italy (harvest season, truffle season, warm seas, fewer crowds)",
+    "France (wine harvest, comfortable temps, lavender late bloom)",
+    "Spain (Rioja harvest, warm seas, comfortable inland, festivals)",
+    "Portugal (Douro harvest, Algarve warm, Lisbon/Porto perfect)",
+    "Croatia (warm seas, fewer crowds, sailing ideal, truffle Istria)",
+    "Greece (warm seas, fewer crowds, olive harvest starts, hiking)",
+    "Turkey (Aegean/Med warm, Cappadocia perfect, Istanbul mild)",
+    "Georgia (wine harvest Rtveli, Caucasus trekking, golden colors)",
+    "Armenia (harvest, golden landscapes, comfortable highlands)",
+    "Japan (autumn colors start north, comfortable, typhoon season ending)"
+];
+
+const travel_nov_dec = [
+    "Thailand (cool/dry starts, Loy Krathong festival, islands perfect)",
+    "Vietnam (north dry/cool, central drying, south perfect, no crowds)",
+    "Cambodia (dry season starts, Angkor comfortable, tonle sap high)",
+    "Laos (dry/cool, Luang Prabang perfect, Mekong cruising)",
+    "Myanmar (cool/dry, Bagan balloons, Inle Lake perfect, temples)",
+    "India (Rajasthan perfect, Goa beaches, Kerala backwaters, festivals)",
+    "Sri Lanka (northeast monsoon but south/west clearing, cultural sites)",
+    "Oman (perfect temps, desert camping, turtle nesting, mountains)",
+    "UAE/Qatar (perfect temps, desert experiences, outdoor dining)",
+    "Egypt (perfect temps, Nile cruise, Red Sea diving, ruins comfortable)"
+];
+
+
+
+const greatgames_2010_2019 = [
+    "Portal 2 by Valve (2011, PC, Metascore 95)",
+    "Mass Effect 2 by BioWare (2010, PC, Metascore 94)",
+    "BioShock Infinite by Irrational Games (2013, PC, Metascore 94)",
+    "Divinity: Original Sin II by Larian Studios (2017, PC, Metascore 93)",
+    "StarCraft II: Wings of Liberty by Blizzard (2010, PC, Metascore 93)",
+    "The Witcher 3: Wild Hunt – Blood and Wine by CD Projekt Red (2016, PC, Metascore 92)",
+    "Overwatch by Blizzard (2016, PC, Metascore 91)",
+    "Minecraft by Mojang (2011, PC, Metascore 93)",
+    "Undertale by Toby Fox (2015, PC, Metascore 92)",
+    "Final Fantasy XIV: Shadowbringers by Square Enix (2019, PC, Metascore 91)",
+    "The Elder Scrolls V: Skyrim by Bethesda (2011, PC, Metascore 94)",
+    "Civilization V by Firaxis (2010, PC, Metascore 90)",
+    "XCOM: Enemy Unknown by Firaxis (2012, PC, Metascore 89)",
+    "Dark Souls II by FromSoftware (2014, PC, Metascore 88)",
+    "Middle-earth: Shadow of Mordor by Monolith (2014, PC, Metascore 88)",
+    "Wolfenstein: The New Order by MachineGames (2014, PC, Metascore 88)",
+    "XCOM 2 by Firaxis (2016, PC, Metascore 89)",
+    "NieR: Automata by PlatinumGames (2017, PC, Metascore 89)",
+    "The Witness by Thekla (2016, PC, Metascore 88)",
+    "Inside by Playdead (2016, PC, Metascore 88)",
+    "Firewatch by Campo Santo (2016, PC, Metascore 85)",
+    "What Remains of Edith Finch by Giant Sparrow (2017, PC, Metascore 85)",
+    "The Talos Principle by Croteam (2014, PC, Metascore 85)",
+    "Limbo by Playdead (2010, PC, Metascore 86)",
+    "Super Meat Boy by Team Meat (2010, PC, Metascore 83)",
+    "Cave Story by Studio Pixel (2010, PC, Metascore 89)",
+    "Bastion by Supergiant Games (2011, PC, Metascore 82)",
+    "Transistor by Supergiant Games (2014, PC, Metascore 87)",
+    "Hyper Light Drifter by Heart Machine (2016, PC, Metascore 86)",
+    "Disco Elysium by ZA/UM (2019, PC, Metascore 91)"
+];
+
+const greatgames_2020_2026 = [
+    "Baldur's Gate 3 by Larian Studios (2023, PC, Metascore 96)",
+    "Elden Ring by FromSoftware (2022, PC, Metascore 96)",
+    "Half-Life: Alyx by Valve (2020, PC, Metascore 93)",
+    "Hades by Supergiant Games (2020, PC, Metascore 93)",
+    "Disco Elysium: The Final Cut by ZA/UM (2021, PC, Metascore 96)",
+    "Persona 5 Royal by Atlus (2020, PC, Metascore 95)",
+    "Hades II by Supergiant Games (2025, PC, Metascore —)",
+    "Balatro by LocalThunk (2024, PC, Metascore —)",
+    "Metaphor: ReFantazio by Atlus (2024, PC, Metascore —)",
+    "Elden Ring: Shadow of the Erdtree by FromSoftware (2024, PC, Metascore —)",
+    "Inscryption by Daniel Mullins Games (2021, PC, Metascore 90)",
+    "Tunic by Andrew Shouldice (2022, PC, Metascore 88)",
+    "Citizen Sleeper by Jump Over the Age (2022, PC, Metascore 88)",
+    "Pentiment by Obsidian (2022, PC, Metascore 88)",
+    "Death's Door by Acid Nerve (2021, PC, Metascore 88)",
+    "Unpacking by Witch Beam (2021, PC, Metascore 88)",
+    "Armored Core VI: Fires of Rubicon by FromSoftware (2023, PC, Metascore 85)",
+    "Lies of P by Neowiz (2023, PC, Metascore 85)",
+    "Black Myth: Wukong by Game Science (2024, PC, Metascore 85)",
+    "Path of Exile 2 by Grinding Gear Games (2024, PC, Metascore —)",
+    "Animal Well by Billy Basso (2024, PC, Metascore —)",
+    "Lethal Company by Zeekerss (2023, PC, Metascore —)",
+    "Core Keeper by Pugstorm (2022, PC, Metascore —)",
+    "Vintage Story by Anego Studios (2021, PC, Metascore —)",
+    "No Man's Sky by Hello Games (2016–2026, PC, Metascore —)",
+    "Final Fantasy VII Rebirth by Square Enix (2024, PC, Metascore —)",
+    "Cities: Skylines II by Colossal Order (2023, PC, Metascore —)",
+    "Baldur's Gate 3 by Larian Studios (2023, PC, Metascore 96)",
+    "The Last of Us Part I by Naughty Dog (2023, PC, Metascore —)",
+    "Resident Evil 4 Remake by Capcom (2023, PC, Metascore 91)"
+];
+
+const cuisine_list = [
+    { cuisine: "Italian", dish: "Pizza Margherita" },
+    { cuisine: "French", dish: "Beef Bourguignon" },
+    { cuisine: "Japanese", dish: "Sushi" },
+    { cuisine: "Chinese", dish: "Peking Duck" },
+    { cuisine: "Indian", dish: "Butter Chicken" },
+    { cuisine: "Thai", dish: "Pad Thai" },
+    { cuisine: "Vietnamese", dish: "Pho" },
+    { cuisine: "Korean", dish: "Bibimbap" },
+    { cuisine: "Mexican", dish: "Tacos al Pastor" },
+    { cuisine: "Spanish", dish: "Paella" },
+    { cuisine: "Greek", dish: "Moussaka" },
+    { cuisine: "Turkish", dish: "Iskender Kebab" },
+    { cuisine: "German", dish: "Schnitzel" },
+    { cuisine: "British", dish: "Fish and Chips" },
+    { cuisine: "American", dish: "Cheeseburger" },
+    { cuisine: "Brazilian", dish: "Feijoada" },
+    { cuisine: "Argentinian", dish: "Asado" },
+    { cuisine: "Portuguese", dish: "Bacalhau à Brás" },
+    { cuisine: "Russian", dish: "Beef Stroganoff" },
+    { cuisine: "Ukrainian", dish: "Borscht" },
+    { cuisine: "Polish", dish: "Pierogi" },
+    { cuisine: "Hungarian", dish: "Goulash" },
+    { cuisine: "Georgian", dish: "Khachapuri" },
+    { cuisine: "Moroccan", dish: "Tagine" },
+    { cuisine: "Lebanese", dish: "Shawarma" },
+    { cuisine: "Indonesian", dish: "Nasi Goreng" },
+    { cuisine: "Malaysian", dish: "Nasi Lemak" },
+    { cuisine: "Scandinavian", dish: "Swedish Meatballs" },
+    { cuisine: "Peruvian", dish: "Ceviche" },
+    { cuisine: "Australian", dish: "Meat Pie" }
+];
+
 const greatbooks = [
     "Things Fall Apart by Chinua Achebe (1958, Nigeria, English)",
     "Fairy Tales by Hans Christian Andersen (1835–37, Denmark, Danish)",
@@ -102,868 +281,242 @@ const greatbooks = [
 ];
 
 
-const movie_list = [
-    "The Shawshank Redemption - 1994",
-    "The Godfather - 1972",
-    "The Dark Knight - 2008",
-    "The Godfather Part II - 1974",
-    "12 Angry Men - 1957",
-    "The Lord of the Rings: The Return of the King - 2003",
-    "Schindler's List - 1993",
-    "Pulp Fiction - 1994",
-    "The Lord of the Rings: The Fellowship of the Ring - 2001",
-    "The Good, the Bad and the Ugly - 1966",
-    "Forrest Gump - 1994",
-    "The Lord of the Rings: The Two Towers - 2002",
-    "Fight Club - 1999",
-    "Inception - 2010",
-    "Star Wars: Episode V - The Empire Strikes Back - 1980",
-    "The Matrix - 1999",
-    "Goodfellas - 1990",
-    "One Flew Over the Cuckoo's Nest - 1975",
-    "Interstellar - 2014",
-    "Se7en - 1995",
-    "It's a Wonderful Life - 1946",
-    "Seven Samurai - 1954",
-    "The Silence of the Lambs - 1991",
-    "Saving Private Ryan - 1998",
-    "City of God - 2002",
-    "Life Is Beautiful - 1997",
-    "The Green Mile - 1999",
-    "Terminator 2: Judgment Day - 1991",
-    "Star Wars: Episode IV - A New Hope - 1977",
-    "Back to the Future - 1985",
-    "Spirited Away - 2001",
-    "The Pianist - 2002",
-    "Parasite - 2019",
-    "Psycho - 1960",
-    "Gladiator - 2000",
-    "The Lion King - 1994",
-    "The Departed - 2006",
-    "Spider-Man: Across the Spider-Verse - 2023",
-    "Whiplash - 2014",
-    "Grave of the Fireflies - 1988",
-    "American History X - 1998",
-    "Léon: The Professional - 1994",
-    "The Prestige - 2006",
-    "Harakiri - 1962",
-    "Casablanca - 1942",
-    "The Usual Suspects - 1995",
-    "The Intouchables - 2011",
-    "Dune: Part Two - 2024",
-    "Cinema Paradiso - 1988",
-    "Modern Times - 1936",
-    "Alien - 1979",
-    "Rear Window - 1954",
-    "Once Upon a Time in the West - 1968",
-    "Django Unchained - 2012",
-    "City Lights - 1931",
-    "Apocalypse Now - 1979",
-    "Memento - 2000",
-    "WALL·E - 2008",
-    "Raiders of the Lost Ark - 1981",
-    "12th Fail - 2023",
-    "The Lives of Others - 2006",
-    "Sunset Boulevard - 1950",
-    "Avengers: Infinity War - 2018",
-    "Paths of Glory - 1957",
-    "Spider-Man: Into the Spider-Verse - 2018",
-    "Witness for the Prosecution - 1957",
-    "The Shining - 1980",
-    "The Great Dictator - 1940",
-    "Aliens - 1986",
-    "Inglourious Basterds - 2009",
-    "The Dark Knight Rises - 2012",
-    "Coco - 2017",
-    "Amadeus - 1984",
-    "Toy Story - 1995",
-    "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - 1964",
-    "Oldboy - 2003",
-    "American Beauty - 1999",
-    "Avengers: Endgame - 2019",
-    "Das Boot - 1981",
-    "Braveheart - 1995",
-    "Good Will Hunting - 1997",
-    "Princess Mononoke - 1997",
-    "Your Name. - 2016",
-    "Joker - 2019",
-    "High and Low - 1963",
-    "3 Idiots - 2009",
-    "Once Upon a Time in America - 1984",
-    "Singin' in the Rain - 1952",
-    "Capernaum - 2018",
-    "Come and See - 1985",
-    "Requiem for a Dream - 2000",
-    "Toy Story 3 - 2010"
+const selfdevelopment = [
+    "Career Capital: Build a strong technical generalist profile around Python, SQL, Data, and Backend.",
+    "Career Capital: Turn GitHub into a professional portfolio with 3–5 polished projects.",
+    "Career Capital: Build one production-like application using Django or FastAPI, PostgreSQL, Redis, Celery, Docker, and CI/CD.",
+    "Career Capital: Master advanced SQL including CTEs, window functions, indexing, and query optimization.",
+    "Career Capital: Learn the fundamentals of Data Engineering, including ETL/ELT, Airflow, Spark, and data warehouses.",
+    "Career Capital: Learn to write technical documentation, architecture decisions, and system specifications.",
+    "Career Capital: Complete a realistic Data Analyst, Backend, or Data Engineer interview simulation every three months.",
+    "Career Capital: Move from being someone who knows many technologies to a specialist who can clearly explain which business problems you solve.",
+
+    "Quant & Trading Research: Build a standardized research pipeline from idea to data, hypothesis, backtest, validation, paper trading, and live trading.",
+    "Quant & Trading Research: Maintain a structured trading journal in PostgreSQL.",
+    "Quant & Trading Research: Track Sharpe ratio, Sortino ratio, profit factor, expectancy, maximum drawdown, exposure, and turnover for every strategy.",
+    "Quant & Trading Research: Master walk-forward analysis and out-of-sample testing.",
+    "Quant & Trading Research: Study overfitting, data snooping, survivorship bias, and other common research errors.",
+    "Quant & Trading Research: Build your own Python framework for testing trading hypotheses.",
+    "Quant & Trading Research: Evaluate strategies using risk-adjusted returns instead of focusing only on raw profitability.",
+    "Quant & Trading Research: Build a public research portfolio with several high-quality trading studies instead of many unfinished strategies.",
+
+    "Software Engineering: Learn to design a complete testing pyramid covering unit, integration, and end-to-end tests.",
+    "Software Engineering: Improve software architecture by clearly separating responsibilities and layers.",
+    "Software Engineering: Give every serious project an .env.example, README, deployment guide, and rollback plan.",
+    "Software Engineering: Master professional Git workflows including branches, pull requests, rebasing, tags, and releases.",
+    "Software Engineering: Set up CI/CD for at least one serious personal project.",
+    "Software Engineering: Learn observability through structured logging, health checks, metrics, and alerting.",
+    "Software Engineering: Study PostgreSQL deeply, including indexes, locks, transactions, isolation levels, and EXPLAIN ANALYZE.",
+    "Software Engineering: Build at least one project designed to survive real growth in traffic and complexity rather than only demonstrate basic functionality.",
+
+    "Teaching: Create your own Python curriculum for students aged 10–18 based on practical projects rather than syntax alone.",
+    "Teaching: Structure your teaching system into beginner, intermediate, and project-based levels.",
+    "Teaching: Create 10 complete educational projects such as Telegram bots, games, websites, database applications, and APIs.",
+    "Teaching: Study modern CS education methods such as retrieval practice, spaced repetition, scaffolding, and project-based learning.",
+    "Teaching: Create diagnostic tasks that can quickly determine a student's programming level.",
+    "Teaching: Develop professional English specifically for teaching computer science and communicating with students and parents.",
+    "Teaching: Explore international teaching opportunities such as Cambridge programs, international schools, and online tutoring.",
+    "Teaching: Build a teaching portfolio containing curricula, student projects, teaching materials, testimonials, and measurable outcomes.",
+
+    "English & Global Mobility: Progress from B2 toward C1 with a focus on professional communication.",
+    "English & Global Mobility: Read English-language material for 20–30 minutes every day without translating every unfamiliar word.",
+    "English & Global Mobility: Watch technical lectures and interviews in English while gradually reducing dependence on subtitles.",
+    "English & Global Mobility: Write one substantial English text every week, such as an analysis, research note, or essay.",
+    "English & Global Mobility: Practice speaking by explaining complicated technical concepts in simple English.",
+    "English & Global Mobility: Learn collocations, phrases, and natural sentence patterns instead of memorizing isolated vocabulary.",
+    "English & Global Mobility: Have at least one 30–60 minute conversation in English every week on a professional topic.",
+    "English & Global Mobility: Make English the working language of selected projects by writing documentation, research, and GitHub content in English.",
+
+    "Intellectual Development: Build a structured path through classical music instead of listening only to random individual works.",
+    "Intellectual Development: Create a personal reading list of 100 important books from different periods, cultures, and traditions.",
+    "Intellectual Development: Read literature not only for entertainment but also to understand human behavior and different worldviews.",
+    "Intellectual Development: Study the foundations of philosophy, including Stoicism, Aristotle, Epicureanism, Nietzsche, and existentialism.",
+    "Intellectual Development: Strengthen probability theory and statistics as mathematical disciplines rather than treating them only as practical tools.",
+    "Intellectual Development: Study behavioral economics, decision-making, and cognitive biases.",
+    "Intellectual Development: Keep notes focused not only on what you learned but also on which mental models you gained.",
+    "Intellectual Development: Study one completely unrelated subject in depth every month to deliberately expand your intellectual range.",
+
+    "Physical Fitness & Energy: Build your physical foundation around strength, endurance, and mobility.",
+    "Physical Fitness & Energy: Perform strength training approximately three times per week.",
+    "Physical Fitness & Energy: Develop Zone 2 cardiovascular fitness as the foundation of endurance.",
+    "Physical Fitness & Energy: Use challenging physical activities and sports as an additional source of motivation and novelty.",
+    "Physical Fitness & Energy: Maintain a stable sleep schedule instead of relying on occasional recovery from accumulated sleep debt.",
+    "Physical Fitness & Energy: Track strength, resting heart rate, endurance, and recovery rather than focusing only on body weight.",
+    "Physical Fitness & Energy: Maintain appropriate preventive medical checkups, especially when long-lasting symptoms require professional evaluation.",
+    "Physical Fitness & Energy: Separate controlled high-adrenaline activities from self-destructive risk-taking and channel the need for intensity into structured challenges.",
+
+    "Personal Systems: Limit yourself to 2–3 major active projects at any given time.",
+    "Personal Systems: Use quarterly goals instead of maintaining an endless list of vague ambitions.",
+    "Personal Systems: Define every major project through a specific and measurable outcome.",
+    "Personal Systems: Divide your week into Deep Work, Maintenance, and Learning blocks.",
+    "Personal Systems: Conduct a 30–45 minute weekly review to evaluate progress, obstacles, and priorities.",
+    "Personal Systems: Maintain a deliberate Not-To-Do List to eliminate interesting but low-value activities.",
+    "Personal Systems: Define measurable progress indicators for each major area, such as GitHub projects, job applications, trading research, or English study hours.",
+    "Personal Systems: Build a system where even on low-energy days you complete a minimum version of the habit instead of abandoning the entire routine."
 ];
 
-
-const bestGamesByGenre = {
-  action: [
-    "The Last of Us Part II (2020)",
-    "Red Dead Redemption 2 (2018)",
-    "God of War (2018)",
-    "Elden Ring (2022)",
-    "Marvel's Spider-Man (2018)"
-  ],
-  rpg: [
-    "The Witcher 3: Wild Hunt (2015)",
-    "Cyberpunk 2077 (2020)",
-    "Elden Ring (2022)",
-    "Persona 5 Royal (2016/2020)",
-    "Divinity: Original Sin 2 (2017)"
-  ],
-  shooter: [
-    "DOOM Eternal (2020)",
-    "Overwatch (2016)",
-    "Destiny 2 (2017)",
-    "Call of Duty: Modern Warfare (2019)",
-    "Titanfall 2 (2016)"
-  ],
-  strategy: [
-    "XCOM 2 (2016)",
-    "Civilization VI (2016)",
-    "Crusader Kings III (2020)",
-    "Starcraft II: Legacy of the Void (2015)",
-    "Total War: Three Kingdoms (2019)"
-  ],
-  adventure: [
-    "The Legend of Zelda: Breath of the Wild (2017)",
-    "Firewatch (2016)",
-    "Life is Strange (2015)",
-    "Outer Wilds (2019)",
-    "Disco Elysium (2019)"
-  ],
-  horror: [
-    "Resident Evil 2 Remake (2019)",
-    "The Evil Within 2 (2017)",
-    "Dead Space Remake (2023)",
-    "Alien: Isolation (2014)",
-    "Amnesia: The Dark Descent (2010)"
-  ],
-  racing: [
-    "Forza Horizon 5 (2021)",
-    "Gran Turismo 7 (2022)",
-    "Mario Kart 8 Deluxe (2017)",
-    "F1 2021 (2021)",
-    "Dirt Rally 2.0 (2019)"
-  ],
-  simulation: [
-    "The Sims 4 (2014)",
-    "Microsoft Flight Simulator (2020)",
-    "Cities: Skylines (2015)",
-    "Planet Zoo (2019)",
-    "Factorio (2020)"
-  ],
-  multiplayer: [
-    "Fortnite (2017)",
-    "Apex Legends (2019)",
-    "Among Us (2018/2020)",
-    "Valorant (2020)",
-    "Minecraft (2011)"
-  ],
-  platformer: [
-    "Celeste (2018)",
-    "Hollow Knight (2017)",
-    "Ori and the Will of the Wisps (2020)",
-    "Little Nightmares II (2021)",
-    "Rayman Legends (2013)"
-  ]
-};
-
-const cuisine_list = [
-    "Italy",
-    "France",
-    "Japan",
-    "China",
-    "India",
-    "Mexico",
-    "Thailand",
-    "Spain",
-    "Greece",
-    "Turkey",
-    "Lebanon",
-    "Peru",
-    "Vietnam",
-    "Korea",
-    "Morocco",
-    "USA",
-    "Russia",
-    "Brazil",
-    "Portugal",
-    "Scandinavia"
+const randomQuestions = [
+    "What is something you could talk about for hours?",
+    "What kind of music do you listen to most often?",
+    "What is the best movie or TV show you have watched recently?",
+    "What is your favorite way to spend a free day?",
+    "What is a place you would really like to visit?",
+    "What is the most interesting place you have ever been to?",
+    "Do you prefer cities, nature, or somewhere in between?",
+    "What hobby would you like to try someday?",
+    "What is something you have learned recently that surprised you?",
+    "What kind of games do you enjoy playing?",
+    "What book, movie, or game would you recommend to almost anyone?",
+    "Are you more of a morning person or a night person?",
+    "What is your favorite kind of food?",
+    "What is a skill you would love to become really good at?",
+    "What is something small that can instantly make your day better?",
+    "If you could live in any country for a year, where would you go?",
+    "What was your favorite subject at school?",
+    "What are you currently interested in learning more about?",
+    "What is the funniest thing that has happened to you recently?",
+    "Do you prefer planning everything or being spontaneous?",
+    "What would your perfect weekend look like?",
+    "If you could instantly master one skill, what would it be?",
+    "What kind of people do you enjoy spending time with?",
+    "What is something you would like to do more often?",
+    "What is one thing you think everyone should try at least once?",
+    "What is your favorite season and why?",
+    "If you had an unexpected free week, how would you spend it?",
+    "What is something you are looking forward to?",
+    "What is a random topic you find surprisingly interesting?",
+    "What question do you wish people asked you more often?"
 ];
 
-const dish_list = [
-    "Italy - Pizza",
-    "Italy - Pasta Carbonara",
-    "Italy - Tiramisu",
-    "France - Croissant",
-    "France - Coq au Vin",
-    "France - Crème Brûlée",
-    "Japan - Sushi",
-    "Japan - Ramen",
-    "Japan - Tempura",
-    "China - Peking Duck",
-    "China - Dim Sum",
-    "China - Kung Pao Chicken",
-    "India - Butter Chicken",
-    "India - Biryani",
-    "India - Samosa",
-    "Mexico - Tacos",
-    "Mexico - Guacamole",
-    "Mexico - Churros",
-    "Thailand - Pad Thai",
-    "Thailand - Tom Yum Soup",
-    "Thailand - Green Curry",
-    "Spain - Paella",
-    "Spain - Gazpacho",
-    "Spain - Churros",
-    "Greece - Moussaka",
-    "Greece - Souvlaki",
-    "Greece - Baklava",
-    "Turkey - Kebabs",
-    "Turkey - Baklava",
-    "Turkey - Meze",
-    "Lebanon - Hummus",
-    "Lebanon - Falafel",
-    "Lebanon - Shawarma",
-    "Peru - Ceviche",
-    "Peru - Lomo Saltado",
-    "Peru - Aji de Gallina",
-    "Vietnam - Pho",
-    "Vietnam - Banh Mi",
-    "Vietnam - Spring Rolls",
-    "Korea - Kimchi",
-    "Korea - Bibimbap",
-    "Korea - Tteokbokki",
-    "Morocco - Tagine",
-    "Morocco - Couscous",
-    "Morocco - Pastilla",
-    "USA - Hamburger",
-    "USA - BBQ Ribs",
-    "USA - Apple Pie",
-    "Russia - Borscht",
-    "Russia - Pelmeni",
-    "Russia - Blini",
-    "Brazil - Feijoada",
-    "Brazil - Pão de Queijo",
-    "Brazil - Brigadeiro",
-    "Portugal - Bacalhau",
-    "Portugal - Pastel de Nata",
-    "Portugal - Francesinha",
-    "Scandinavia - Gravlax",
-    "Scandinavia - Smørrebrød",
-    "Scandinavia - Meatballs"
+const weird_places = [
+    "Great Pyramid of Giza, Egypt (an enormous ancient monument whose construction still fascinates engineers and archaeologists)",
+    "Easter Island, Chile (remote island famous for nearly 900 monumental stone statues called moai)",
+    "Nazca Lines, Peru (giant ancient drawings of animals and geometric shapes etched into the desert, best seen from above)",
+    "Derinkuyu Underground City, Turkey (a multi-level underground city with tunnels, storage rooms, and ventilation shafts)",
+    "Göbekli Tepe, Turkey (a prehistoric monumental site built thousands of years before Stonehenge)",
+    "Stonehenge, England (a prehistoric stone circle whose exact original purpose remains debated)",
+    "Newgrange, Ireland (an ancient passage tomb designed so sunlight enters its chamber around the winter solstice)",
+    "Nan Madol, Micronesia (an ancient city built on artificial islets connected by canals in the Pacific Ocean)",
+    "Meteora, Greece (monasteries perched dramatically on towering natural rock pillars)",
+    "Socotra Island, Yemen (an isolated island with bizarre dragon's blood trees and many endemic species)",
+    "Darvaza Gas Crater, Turkmenistan (a huge desert crater famous for its burning natural gas)",
+    "Lake Hillier, Australia (a lake historically famous for its striking pink color)",
+    "Spotted Lake, Canada (a mineral-rich lake that develops colorful circular patches as water evaporates)",
+    "Salar de Uyuni, Bolivia (the world's largest salt flat that can become a giant mirror after rainfall)",
+    "Zhangye Danxia, China (rainbow-colored mountains formed by layers of mineral-rich rock)",
+    "Tsingy de Bemaraha, Madagascar (a forest of razor-sharp limestone pinnacles and deep rocky canyons)",
+    "Waitomo Glowworm Caves, New Zealand (underground caves illuminated by thousands of tiny glowing larvae)",
+    "Fly Geyser, Nevada, USA (a colorful geothermal mound created after an accidental well drilling)",
+    "Pamukkale, Turkey (white mineral terraces filled with turquoise thermal water)",
+    "Cappadocia, Turkey (landscapes of strange rock towers, cave dwellings, and underground settlements)",
+    "Bisti/De-Na-Zin Wilderness, New Mexico, USA (alien-looking desert formations shaped by erosion)",
+    "Antelope Canyon, Arizona, USA (narrow sandstone corridors with flowing curves and dramatic shafts of light)",
+    "Giant's Causeway, Northern Ireland (thousands of interlocking basalt columns that look artificially manufactured)",
+    "Devils Tower, Wyoming, USA (a massive isolated rock formation covered in striking vertical columns)",
+    "Badab-e Surt, Iran (terraced mineral springs with vivid orange, red, and yellow deposits)",
+    "The Wave, Arizona, USA (smooth sandstone formations covered in swirling, wave-like patterns)",
+    "Mount Roraima, South America (a gigantic flat-topped mountain with isolated ecosystems and sheer cliffs)",
+    "Caño Cristales, Colombia (a river that develops vivid seasonal colors from aquatic plants)",
+    "Blood Falls, Antarctica (a glacier waterfall stained red by iron-rich, salty water)",
+    "Lake Natron, Tanzania (an extremely alkaline lake with mineral-rich waters and striking red hues at times)",
+    "Danakil Depression, Ethiopia (a harsh landscape of colorful mineral deposits, salt flats, and acidic geothermal pools)",
+    "Centralia, Pennsylvania, USA (a largely abandoned town affected by an underground coal-mine fire)",
+    "Hashima Island, Japan (an abandoned mining island covered with dense concrete buildings)",
+    "Pripyat, Ukraine (an abandoned city evacuated after the Chernobyl nuclear disaster)",
+    "Kolmanskop, Namibia (a former diamond-mining town where desert sand has swallowed many buildings)",
+    "Buzludzha Monument, Bulgaria (an abandoned futuristic-looking monument resembling a giant concrete UFO)",
+    "Island of the Dolls, Mexico (a canal island covered with old dolls hanging from trees and buildings)",
+    "Paris Catacombs, France (underground tunnels containing the remains of millions of people)",
+    "Sedlec Ossuary, Czech Republic (a chapel decorated with elaborate arrangements of human bones)",
+    "Capuchin Catacombs of Palermo, Italy (underground corridors displaying naturally mummified human bodies)",
+    "Coober Pedy, Australia (a desert town where many residents live underground to escape extreme heat)",
+    "Tristan da Cunha, South Atlantic Ocean (one of the world's most remote inhabited island groups)",
+    "Oymyakon, Russia (a Siberian settlement known for exceptionally low winter temperatures)",
+    "Richat Structure, Mauritania (a gigantic circular geological formation nicknamed the Eye of the Sahara)",
+    "Yonaguni Monument, Japan (an underwater rock formation whose apparent steps and terraces fuel debate over its origin)",
+    "Moeraki Boulders, New Zealand (huge, nearly spherical rocks scattered across a beach)",
+    "Mount Kailash, Tibet (a sacred mountain revered by several religions and traditionally left unclimbed)",
+    "Sagada Hanging Coffins, Philippines (traditional burial sites where coffins are suspended from cliffs)",
+    "Lake Kaindy, Kazakhstan (a mountain lake containing the ghostly trunks of submerged spruce trees)",
+    "Valley of Balls, Kazakhstan (a vast landscape scattered with unusually spherical rock formations)",
+    "Singing Dune, Altyn-Emel National Park, Kazakhstan (a sand dune capable of producing a deep booming sound under certain conditions)",
+    "Moynaq Ship Graveyard, Uzbekistan (rusting fishing vessels stranded in a former harbor after the retreat of the Aral Sea)",
+    "Kawah Ijen, Indonesia (a volcanic area famous for electric-blue sulfur flames visible under suitable nighttime conditions)",
+    "Cenote Angelita, Mexico (an underwater cave with a dramatic submerged layer that resembles a river beneath the water)",
+    "Mammoth Cave, Kentucky, USA (part of an immense cave system with long underground passages and unusual formations)",
+    "Bhangarh Fort, India (ruined historic settlement surrounded by local ghost stories and supernatural legends)",
+    "The Darvaza Crater, Turkmenistan (a surreal, glowing pit in the middle of a largely barren desert)",
+    "The Door to Hell, Copenhagen, Denmark (a misleading nickname sometimes used in urban legends; research the actual location before visiting)"
 ];
 
-const springList = [
-  "Japan (Cherry blossom season and mild weather)",
-  "South Korea (Spring festivals and blooming cherry trees)",
-  "Netherlands (Tulip fields and Keukenhof Gardens in full bloom)",
-  "France (Spring landscapes and fewer tourists in cities)",
-  "Italy (Mild temperatures and colorful countryside)",
-  "Spain (Warm but not too hot — ideal for exploring)",
-  "Portugal (Blooming landscapes and coastal charm)",
-  "Greece (Start of the tourist season without crowds)",
-  "Morocco (Comfortable weather before summer heat)",
-  "Turkey (Tulip season in Istanbul and ideal sightseeing conditions)",
-  "Jordan (Mild weather and wildflower bloom in the desert)",
-  "Israel (Perfect for outdoor exploration and festivals)",
-  "China (Spring blossoms and pleasant weather across major regions)",
-  "Vietnam (Ideal time in the north and central regions)",
-  "Taiwan (Cherry blossoms and mountain hikes)",
-  "USA (Washington, D.C. cherry blossoms and national parks awakening)",
-  "Canada (Warming up with fewer crowds — especially in Vancouver and Victoria)",
-  "Mexico (Dry season continues with vibrant culture and warm beaches)",
-  "Cuba (Sunny and dry — perfect for city and coast)",
-  "Egypt (Still comfortable before intense summer heat)",
-  "Uzbekistan (Ideal time to explore Silk Road cities without extreme temperatures)",
-  "Georgia (Blooming countryside and wine region awakening)",
-  "Armenia (Mountains and valleys come alive with color)",
-  "Croatia (Quiet Adriatic coast and pleasant spring air)",
-  "Slovenia (Fresh alpine air and green valleys)",
-  "Austria (Flowering meadows and ideal for spring hikes)",
-  "Germany (Flower festivals and awakening city life)",
-  "Hungary (Budapest in bloom and pleasant Danube walks)",
-  "Czech Republic (Sunny Prague and fewer crowds)",
-  "Switzerland (Snow-capped mountains meet blooming valleys)"
-];
-
-const summerList = [
-  "Iceland (Midnight sun, green landscapes, and accessible highlands)",
-  "Norway (Fjords, long daylight hours, and pleasant weather)",
-  "Canada (Warm weather, national parks, and festivals)",
-  "Switzerland (Hiking in the Alps and crystal-clear lakes)",
-  "Sweden (Midsummer celebrations and beautiful nature)",
-  "Finland (Lakes, forests, and 24-hour daylight in the north)",
-  "Scotland (Long days, mild temperatures, and green highlands)",
-  "Ireland (Lush landscapes and vibrant cultural festivals)",
-  "Italy (Coastal beauty, summer festivals, and historic cities)",
-  "France (Provence lavender fields and southern beaches)",
-  "Spain (Lively coastal towns and summer fiestas)",
-  "Greece (Sunny islands, beach life, and clear waters)",
-  "Portugal (Surfing, seafood, and sunny coastal towns)",
-  "Croatia (Adriatic coast, sailing, and island hopping)",
-  "Montenegro (Beautiful beaches and less crowded than neighbors)",
-  "Slovenia (Lake Bled, hiking, and mild alpine climate)",
-  "Austria (Mountain lakes, hiking trails, and classical music festivals)",
-  "Germany (Beer gardens, castles, and outdoor events)",
-  "Czech Republic (Sunny Prague, castles, and open-air concerts)",
-  "Netherlands (Canal tours, cycling, and summer festivals)",
-  "Denmark (Copenhagen life, beaches, and hygge in the sun)",
-  "Estonia (Medieval towns, nature, and long summer days)",
-  "Japan (Mountain hiking, festivals, and vibrant nature)",
-  "South Korea (Beaches, island trips, and cultural festivals)",
-  "USA (National parks, road trips, and summer events)",
-  "Canada (Again for west coast road trips and nature in full bloom)",
-  "Peru (Dry season in the Andes, ideal for Machu Picchu trekking)",
-  "Tanzania (Great Migration season in Serengeti)",
-  "Kenya (Prime wildlife viewing and clear skies)",
-  "Indonesia (Dry season in Bali and other islands)"
-];
-
-const autumnList = [
-  "Japan (Spectacular autumn foliage and pleasant temperatures)",
-  "South Korea (Vibrant fall colors and cultural festivals)",
-  "Canada (Stunning foliage, especially in Quebec and Ontario)",
-  "USA (New England fall colors and harvest festivals)",
-  "Germany (Oktoberfest and golden forests in Bavaria)",
-  "Austria (Alpine hikes and colorful valleys)",
-  "Switzerland (Fall hikes, fewer tourists, and wine season)",
-  "France (Grape harvest in wine regions and mild weather)",
-  "Italy (Truffle season, vineyard tours, and fewer crowds)",
-  "Spain (Comfortable temperatures and autumn festivals)",
-  "Portugal (Wine harvest and warm, quiet beaches)",
-  "Greece (Mild weather and less crowded historical sites)",
-  "Turkey (Ideal weather for exploring Istanbul and Cappadocia)",
-  "Morocco (Cooler desert temperatures and cultural events)",
-  "China (Golden foliage and clear skies in regions like Beijing and Guilin)",
-  "Vietnam (Dry season starts in the north, perfect for trekking)",
-  "Nepal (Best trekking season with clear mountain views)",
-  "Bhutan (Crisp air, clear skies, and colorful festivals)",
-  "Jordan (Comfortable climate for exploring Petra and Wadi Rum)",
-  "Iran (Pleasant weather and beautiful autumn landscapes)",
-  "Croatia (Less crowded coast and national parks in fall colors)",
-  "Slovenia (Charming autumn forests and harvest season)",
-  "Hungary (Budapest in golden light and wine country tours)",
-  "Czech Republic (Cozy autumn vibes in Prague and countryside)",
-  "Poland (Golden forests and cultural events in cities)",
-  "Georgia (Wine harvest season and scenic Caucasus mountains)",
-  "Armenia (Beautiful fall landscapes and fewer tourists)",
-  "Romania (Forests in peak color and atmospheric castles)",
-  "New Zealand (Spring begins in the Southern Hemisphere — blooming nature)",
-  "Australia (Great weather in southern regions like Melbourne and Adelaide)"
-];
-
-const winterList = [
-  "Japan (Powder snow in Hokkaido and hot spring experiences)",
-  "Switzerland (World-class skiing and cozy alpine villages)",
-  "Austria (Ski resorts and classical winter charm)",
-  "France (Alps skiing and winter markets in Alsace)",
-  "Norway (Northern Lights and winter adventures)",
-  "Sweden (Dog sledding and Icehotel in Lapland)",
-  "Finland (Santa Claus Village and snowy wilderness)",
-  "Iceland (Northern Lights and dramatic winter landscapes)",
-  "Canada (Skiing in the Rockies and winter festivals)",
-  "USA (Colorado, Utah, and winter city breaks like NYC)",
-  "Germany (Magical Christmas markets and snowy Bavarian towns)",
-  "Czech Republic (Romantic snowy Prague and festive mood)",
-  "Italy (Dolomites skiing and fewer crowds in cities)",
-  "Spain (Mild southern winters and fewer tourists)",
-  "Portugal (Sunny, cool days in Lisbon and Algarve)",
-  "Morocco (Pleasant winter temperatures and desert tours)",
-  "Egypt (Cooler weather ideal for sightseeing and Nile cruises)",
-  "Jordan (Comfortable climate for Petra and desert trekking)",
-  "UAE (Warm weather, luxury resorts, and festivals)",
-  "Oman (Perfect time for desert and mountain adventures)",
-  "Thailand (Dry season begins, ideal for beaches and islands)",
-  "Vietnam (Dry and mild in the south and central regions)",
-  "Cambodia (Cooler season for temples and cultural sites)",
-  "India (Best time for Rajasthan, Goa, and Kerala)",
-  "Sri Lanka (Dry season in the southwest — beaches and nature)",
-  "Maldives (Peak season for diving and tropical relaxation)",
-  "Philippines (Dry season perfect for island hopping)",
-  "Australia (Summer in the southern hemisphere — beaches and cities)",
-  "New Zealand (Summer season with lush nature and outdoor activities)",
-  "South Africa (Sunny Cape Town, vineyards, and safaris)"
-];
-
-
-const bestAlbums = [
-  "Lauryn Hill – The Miseducation of Lauryn Hill (1998)",
-  "Michael Jackson – Thriller (1982)",
-  "The Beatles – Abbey Road (1969)",
-  "Prince – Purple Rain (1984)",
-  "Frank Ocean – Blonde (2016)",
-  "Stevie Wonder – Songs in the Key of Life (1976)",
-  "Kendrick Lamar – good kid, m.A.A.d city (2012)",
-  "Amy Winehouse – Back to Black (2006)",
-  "Nirvana – Nevermind (1991)",
-  "Beyoncé – Lemonade (2016)",
-  "Fleetwood Mac – Rumours (1977)",
-  "Radiohead – OK Computer (1997)",
-  "Jay-Z – The Blueprint (2001)",
-  "Bob Dylan – Highway 61 Revisited (1965)",
-  "Adele – 21 (2011)",
-  "Joni Mitchell – Blue (1971)",
-  "Marvin Gaye – What's Going On (1971)",
-  "Taylor Swift – 1989 (Taylor’s Version) (2023)",
-  "Dr. Dre – The Chronic (1992)",
-  "The Beach Boys – Pet Sounds (1966)",
-  "The Beatles – Revolver (1966)",
-  "Billie Eilish – WHEN WE ALL FALL ASLEEP, WHERE DO WE GO? (2019)",
-  "A Tribe Called Quest – The Low End Theory (1991)",
-  "Pink Floyd – The Dark Side of the Moon (1973)",
-  "Led Zeppelin – Led Zeppelin II (1969)",
-  "Kanye West – My Beautiful Dark Twisted Fantasy (2010)",
-  "Miles Davis – Kind of Blue (1959)",
-  "David Bowie – The Rise and Fall of Ziggy Stardust (1972)",
-  "Daft Punk – Discovery (2001)",
-  "Bruce Springsteen – Born to Run (1975)",
-  "Eagles – Hotel California (1976)",
-  "Travis Scott – ASTROWORLD (2018)",
-  "Rage Against the Machine – Rage Against the Machine (1992)",
-  "Lorde – Pure Heroine (2013)",
-  "Usher – Confessions (2004)",
-  "Burial – Untrue (2007)",
-  "Solange – A Seat at the Table (2016)",
-  "Tyler, The Creator – Flower Boy (2017)",
-  "George Michael – Listen Without Prejudice Vol. 1 (1990)",
-  "AC/DC – Back in Black (1980)",
-  "Lady Gaga – The Fame Monster (2009)",
-  "Nina Simone – I Put a Spell on You (1965)",
-  "Massive Attack – Blue Lines (1991)",
-  "Mary J. Blige – My Life (1994)",
-  "Kacey Musgraves – Golden Hour (2018)",
-  "Snoop Dogg – Doggystyle (1993)",
-  "Patti Smith – Horses (1975)",
-  "50 Cent – Get Rich or Die Tryin' (2003)",
-  "Neil Young – After the Gold Rush (1970)",
-  "Eminem – The Marshall Mathers LP (2000)",
-  "Lana Del Rey – Norman F*****g Rockwell! (2019)",
-  "Elton John – Goodbye Yellow Brick Road (1973)",
-  "Madonna – Like a Prayer (1989)",
-  "Bad Bunny – Un Verano Sin Ti (2022)",
-  "Missy Elliott – Supa Dupa Fly (1997)",
-  "Nine Inch Nails – The Downward Spiral (1994)",
-  "Steely Dan – Aja (1977)",
-  "SZA – SOS (2022)",
-  "Kraftwerk – Trans-Europe Express (1977)",
-  "N.W.A – Straight Outta Compton (1988)",
-  "Metallica – Master of Puppets (1986)",
-  "The Strokes – Is This It (2001)",
-  "Portishead – Dummy (1994)",
-  "The Smiths – The Queen Is Dead (1986)",
-  "De La Soul – 3 Feet High and Rising (1989)",
-  "Erykah Badu – Baduizm (1997)",
-  "The Jimi Hendrix Experience – Are You Experienced (1967)",
-  "2Pac – All Eyez on Me (1996)",
-  "Sade – Love Deluxe (1992)",
-  "The Velvet Underground & Nico – The Velvet Underground & Nico (1967)",
-  "Arctic Monkeys – AM (2013)",
-  "Oasis – (What's the Story) Morning Glory? (1995)",
-  "D'Angelo – Voodoo (2000)",
-  "The Cure – Disintegration (1989)",
-  "Rihanna – ANTI (2016)",
-  "John Coltrane – A Love Supreme (1965)",
-  "The Rolling Stones – Exile on Main St. (1972)",
-  "Guns N' Roses – Appetite for Destruction (1987)",
-  "Prince – Sign o' the Times (1987)",
-  "Kate Bush – Hounds of Love (1985)",
-  "U2 – The Joshua Tree (1987)",
-  "Beastie Boys – Paul's Boutique (1989)",
-  "Drake – Take Care (2011)",
-  "Bob Marley & The Wailers – Exodus (1977)",
-  "Björk – Homogenic (1997)",
-  "Stevie Wonder – Innervisions (1973)",
-  "Talking Heads – Remain in Light (1980)",
-  "Janet Jackson – Control (1986)",
-  "Outkast – Aquemini (1998)",
-  "Aretha Franklin – I Never Loved a Man the Way I Love You (1967)",
-  "Nas – Illmatic (1994)",
-  "Carole King – Tapestry (1971)",
-  "Wu-Tang Clan – Enter the Wu-Tang (36 Chambers) (1993)",
-  "Beyoncé – BEYONCÉ (2013)",
-  "The Clash – London Calling (1979)",
-  "Public Enemy – It Takes a Nation of Millions to Hold Us Back (1988)",
-  "Radiohead – Kid A (2000)",
-  "The Notorious B.I.G. – Ready to Die (1994)",
-  "Alanis Morissette – Jagged Little Pill (1995)"
-];
-
-
-
-const serialList = [
-    { title: "Во все тяжкие", year: "2008–2013" },
-    { title: "Планета Земля 2", year: "2016" },
-    { title: "BBC: Планета Земля", year: "2006" },
-    { title: "Братья по оружию", year: "2001" },
-    { title: "Чернобыль", year: "2019" },
-    { title: "Прослушка", year: "2002–2008" },
-    { title: "Аватар: Легенда об Аанге", year: "2005–2008" },
-    { title: "Голубая планета 2", year: "2017" },
-    { title: "Сопрано", year: "1999–2007" },
-    { title: "Космос: Пространство и время", year: "2014" },
-    { title: "Космос", year: "1980" },
-    { title: "Наша планета", year: "2019–2023" },
-    { title: "Игра престолов", year: "2011–2019" },
-    { title: "Блуи", year: "2018–" },
-    { title: "Мир в войне", year: "1973–1974" },
-    { title: "Стальной алхимик: Братство", year: "2009–2010" },
-    { title: "BBC: Жизнь", year: "2009" },
-    { title: "Рик и Морти", year: "2013–" },
-    { title: "Последний танец", year: "2020" },
-    { title: "Сумеречная зона", year: "1959–1964" },
-    { title: "Вьетнам", year: "2017" },
-    { title: "Атака титанов", year: "2013–2023" },
-    { title: "Шерлок", year: "2010–2017" },
-    { title: "Бэтмен", year: "1992–1995" },
-    { title: "Аркейн", year: "2021–2024" },
-    { title: "Лучше звоните Солу", year: "2015–2022" },
-    { title: "Офис", year: "2005–2013" },
-    { title: "BBC: Голубая планета", year: "2001" },
-    { title: "Ферма Кларксона", year: "2021–" },
-    { title: "Жульничество 1992: История Харшада Мехты", year: "2020" },
-    { title: "BBC: Планета людей", year: "2011" },
-    { title: "BBC: Замерзшая планета", year: "2011–2012" },
-    { title: "Охотник х Охотник", year: "2011–2014" },
-    { title: "Светлячок", year: "2002–2003" },
-    { title: "Дуракам везет", year: "1981–2003" },
-    { title: "Гражданская война", year: "1990" },
-    { title: "Тетрадь смерти", year: "2006–2007" },
-    { title: "Гравити Фолз", year: "2012–2016" },
-    { title: "Сайнфелд", year: "1989–1998" },
-    { title: "Декалог", year: "1989–1990" },
-    { title: "The Beatles: Get Back", year: "2021" },
-    { title: "Gibi", year: "2021–" },
-    { title: "Настоящий детектив", year: "2014–" },
-    { title: "Ковбой Бибоп", year: "1998–1999" },
-    { title: "Фарго", year: "2014–2024" },
-    { title: "Нэйтан спешит на выручку", year: "2013–2017" },
-    { title: "Личность", year: "2018–" },
-    { title: "Апокалипсис: Вторая мировая война", year: "2009" },
-    { title: "Таскмастер", year: "2015–" },
-    { title: "Африка", year: "2013" },
-    { title: "Провожающая в последний путь Фрирен", year: "2023–" },
-    { title: "Когда они нас увидят", year: "2019" },
-    { title: "Друзья", year: "1994–2004" },
-    { title: "События Прошедшей Недели С Джоном Оливером", year: "2014–" },
-    { title: "В Филадельфии всегда солнечно", year: "2005–" },
-    { title: "Наследники", year: "2018–2023" },
-    { title: "TVF Pitchers", year: "2015–2022" },
-    { title: "Западное крыло", year: "1999–2006" },
-    { title: "Ван-Пис", year: "1999–" },
-    { title: "Умерь свой энтузиазм", year: "2000–2024" },
-    { title: "Монти Пайтон: Летающий цирк", year: "1969–1974" },
-    { title: "Подводная лодка", year: "1985" },
-    { title: "Избранные", year: "2017–" },
-    { title: "Конь БоДжек", year: "2014–2020" },
-    { title: "Отель «Фолти Тауэрс»", year: "1975–1979" },
-    { title: "Лейла и Меджнун", year: "2011–2023" },
-    { title: "Панчаят", year: "2020–" },
-    { title: "Драконий жемчуг Зет", year: "1996–2003" },
-    { title: "Чeрная гадюка 4", year: "1989" },
-    { title: "Гордость и предубеждение", year: "1995" },
-    { title: "Хулиганы и ботаны", year: "1999–2000" },
-    { title: "Твин Пикс", year: "1990–1991" },
-    { title: "Блич: Тысячелетняя кровавая война", year: "2022–" },
-    { title: "Драконий жемчуг Зет", year: "1989–1996" },
-    { title: "Шоу Шаппелла", year: "2003–2006" },
-    { title: "Нарко", year: "2015–2017" },
-    { title: "Копилка", year: "2019–" },
-    { title: "Сага о Винланде", year: "2019–2023" },
-    { title: "Я, Клавдий", year: "1976" },
-    { title: "Фабрика гениев", year: "2019–2021" },
-    { title: "Южный парк", year: "1997–" },
-    { title: "Чёрное зеркало", year: "2011–" },
-    { title: "По ту сторону изгороди", year: "2014" },
-    { title: "Тед Лассо", year: "2020–" },
-    { title: "Вернуться в 1988", year: "2015–2016" },
-    { title: "Острые козырьки", year: "2013–2022" },
-    { title: "Клиент всегда мертв", year: "2001–2005" },
-    { title: "Врата Штейна", year: "2011–2015" },
-    { title: "Люди Икс '97", year: "2024–" },
-    { title: "Рим", year: "2005–2007" },
-    { title: "Тюрьма «ОZ»", year: "1997–2003" },
-    { title: "Мой аджосси", year: "2018" },
-    { title: "Разделение", year: "2022–" },
-    { title: "Берсерк", year: "1997–1998" },
-    { title: "Тьма", year: "2017–2020" },
-    { title: "Дрянь", year: "2016–2019" },
-    { title: "Щит", year: "2002–2008" },
-    { title: "Аббатство Даунтон", year: "2010–2015" },
-    { title: "Одни из нас", year: "2023–" },
-    { title: "Гранд тур", year: "2016–2024" },
-    { title: "Звездный крейсер Галактика", year: "2004–2009" },
-    { title: "Безумцы", year: "2007–2015" },
-    { title: "Голубоглазый самурай", year: "2023–" },
-    { title: "Симпсоны", year: "1989–" },
-    { title: "Пип шоу", year: "2003–2015" },
-    { title: "Звездный путь: Следующее поколение", year: "1987–1994" },
-    { title: "Неуязвимый", year: "2021–" },
-    { title: "Доктор Хаус", year: "2004–2012" },
-    { title: "Наруто: Ураганные хроники", year: "2007–2017" },
-    { title: "Монстр", year: "2004–2005" },
-    { title: "Задержка в развитии", year: "2003–2019" },
-    { title: "Ванпанчмен", year: "2015–" },
-    { title: "Лига справедливости: Без границ", year: "2004–2006" },
-    { title: "Приключения Шерлока Холмса", year: "1984–1985" },
-    { title: "Пацаны", year: "2019–" },
-    { title: "Огни ночной пятницы", year: "2006–2011" },
-    { title: "Махабхарата", year: "1988–1990" },
-    { title: "По долгу службы", year: "2012–2021" },
-    { title: "Удивительная миссис Мэйзел", year: "2017–2023" },
-    { title: "Очень странные дела", year: "2016–2025" },
-    { title: "Топ Гир", year: "2002–2022" },
-    { title: "Гуща событий", year: "2005–2012" },
-    { title: "1883: A Yellowstone Origin Story", year: "2021–2022" },
-    { title: "Полезные советы от Джона Уилсона", year: "2020–2023" },
-    { title: "Это мы", year: "2016–2022" },
-    { title: "Бехзат: Серийные преступления в Анкаре", year: "2010–2019" },
-    { title: "Отец Тед", year: "1995–1998" },
-    { title: "Сарабхай против Сарабхай", year: "2004–2017" },
-    { title: "Кандидаты", year: "2021–" },
-    { title: "Мандалорец", year: "2019–" },
-    { title: "Код Гиас: Bосставший Лелуш", year: "2006–2008" },
-    { title: "Парки и зоны отдыха", year: "2009–2015" },
-    { title: "Секретные материалы", year: "1993–2018" },
-    { title: "Карточный домик", year: "2013–2018" },
-    { title: "Атланта", year: "2016–2022" },
-    { title: "Время приключений", year: "2010–2018" },
-    { title: "Рамаяна", year: "1987–1988" },
-    { title: "Дэдвуд", year: "2004–2006" },
-    { title: "Декстер", year: "2006–2013" },
-    { title: "Корона", year: "2016–2023" },
-    { title: "Это грех", year: "2021" },
-    { title: "Решала", year: "2018–2021" },
-    { title: "Сорвиголова", year: "2015–2018" },
-    { title: "Мост", year: "2011–2018" },
-    { title: "Первобытный", year: "2019–" },
-    { title: "Чeрная гадюка 2", year: "1986" },
-    { title: "Сёгун", year: "2024–2026" },
-    { title: "Одинокий голубь", year: "1989" },
-    { title: "Пингвин", year: "2024" },
-    { title: "Пуаро Агаты Кристи", year: "1989–2013" },
-    { title: "Охотник за разумом", year: "2017–2019" },
-    { title: "Мистер Бин", year: "1990–1995" },
-    { title: "Первый шаг", year: "2000–2002" },
-    { title: "Возвращение Шерлока Холмса", year: "1986–1988" },
-    { title: "Тайны миллиардера", year: "2015–2024" },
-    { title: "Предложение", year: "2022" },
-    { title: "Аварийная посадка любви", year: "2019–2020" },
-    { title: "Волейбол!!", year: "2014–2020" },
-    { title: "Царство падальщиков", year: "2023" },
-    { title: "Гоморра", year: "2014–2021" },
-    { title: "Да, господин министр", year: "1980–1984" },
-    { title: "Поза", year: "2018–2021" },
-    { title: "Чeрная гадюка 3", year: "1987" },
-    { title: "Важнейшие события Второй мировой войны в цвете", year: "2019" },
-    { title: "Энн", year: "2017–2019" },
-    { title: "Больница Питт", year: "2025–" },
-    { title: "Таинственный театр 3000 года", year: "1988–1999" },
-    { title: "Служба новостей", year: "2012–2014" },
-    { title: "Арчер", year: "2009–2023" },
-    { title: "Бюро легенд", year: "2015–2020" },
-    { title: "Ломка", year: "2021" },
-    { title: "Подпольная империя", year: "2010–2014" },
-    { title: "Сорвиголова: Рожденный заново", year: "2025–" },
-    { title: "Чaво с восьмого", year: "1972–1983" },
-    { title: "Критикал рол", year: "2015–" },
-    { title: "Yeh Meri Family", year: "2018–" },
-    { title: "Убойный отдел", year: "1993–1999" },
-    { title: "Юная Лига Справедливости", year: "2010–2022" },
-    { title: "КьюАй. Весьма интересно", year: "2003–" },
-    { title: "Истребитель демонов : Kimetsu no Yaiba", year: "2019–" },
-    { title: "Правосудие", year: "2010–2015" },
-    { title: "Шоу Багса Банни", year: "1960–1975" },
-    { title: "Семьянин", year: "2019–" },
-    { title: "Чем мы занимаемся в тени", year: "2019–2024" },
-    { title: "Драконий жемчуг", year: "1986–1989" },
-    { title: "Призраки дома на холме", year: "2018" },
-    { title: "Лига справедливости", year: "2001–2004" },
-    { title: "Звёздный крейсер Галактика", year: "2003" },
-    { title: "Драконий жемчуг", year: "1995–2003" },
-    { title: "Братья Bентура", year: "2003–2018" },
-    { title: "Индевор", year: "2012–2023" },
-    { title: "Да, господин Премьер-министр", year: "1986–1987" },
-    { title: "Самурай Чамплу", year: "2004–2005" },
-    { title: "Летучие Конкорды", year: "2007–2009" },
-    { title: "Rocket Boys", year: "2022–" },
-    { title: "Ход королевы", year: "2020" },
-    { title: "Компьютерщики", year: "2006–2013" },
-    { title: "Любовь на шестерых", year: "2000–2004" },
-    { title: "Тени над Балканами", year: "2017–2020" },
-    { title: "Создавая Убийцу", year: "2015–2018" },
-    { title: "Медведь", year: "2022–" },
-    { title: "Мистер Робот", year: "2015–2019" },
-    { title: "Эзель", year: "2009–2011" },
-    { title: "Я - Алан Партридж", year: "1997–2002" },
-    { title: "Йеллоустоун", year: "2018–2024" },
-    { title: "Искатели сокровищ", year: "2014–2022" },
-    { title: "Самурай Джек", year: "2001–2017" },
-    { title: "Невозможные шутники", year: "2011–" },
-    { title: "Счастливая долина", year: "2014–2023" },
-    { title: "Долбанутые", year: "1999–2001" },
-    { title: "Магическая битва", year: "2020–" },
-    { title: "Долгий путь вокруг Земли", year: "2004–2010" },
-    { title: "Обычное шоу", year: "2010–2017" },
-    { title: "Спартак: Кровь и песок", year: "2010–2013" },
-    { title: "Так чья сейчас реплика?", year: "1998–2007" },
-    { title: "Шоу Эрика Андре", year: "2012–" },
-    { title: "Девчонки из Дерри", year: "2018–2022" },
-    { title: "Твин Пикс", year: "2017" },
-    { title: "Сыны анархии", year: "2008–2014" },
-    { title: "Моб Психо 100", year: "2016–2022" },
-    { title: "Луи", year: "2010–2015" },
-    { title: "Discovery: Сквозь пространство и время с Морганом Фрименом", year: "2010–2017" },
-    { title: "Офис", year: "2001–2003" },
-    { title: "Евангелион", year: "1995–1996" },
-    { title: "Парни из Трейлерпарка", year: "2001–2018" },
-    { title: "Алхимия душ", year: "2022–2023" },
-    { title: "Спартак: Боги арены", year: "2011" },
-    { title: "Шиттс Крик", year: "2015–2020" },
-    { title: "Моя гениальная подруга", year: "2018–2024" },
-    { title: "Заднепроходнее отверстие", year: "1997–2001" },
-    { title: "Кремниевая долина", year: "2014–2019" },
-    { title: "Стыд", year: "2015–2017" },
-    { title: "Бесстыжие", year: "2011–2021" },
-    { title: "Бродяга Кэнсин: Воспоминания", year: "1999" },
-    { title: "Формула 1: Гонять, чтобы выживать", year: "2019–" },
-    { title: "Стальной алхимик", year: "2003–2004" },
-    { title: "Футурама", year: "1999–" },
-    { title: "Пространство", year: "2015–2022" },
-    { title: "Север и Юг", year: "2004" },
-    { title: "Ганнибал", year: "2013–2015" },
-    { title: "О всех созданиях - больших и малых", year: "2020–" },
-    { title: "Доктор Кто", year: "2005–2022" },
-    { title: "Европейская сторона", year: "2004–2009" },
-    { title: "Необычный адвокат", year: "2022" },
-    { title: "Тени", year: "2014–2019" },
-    { title: "Уэнтуорт", year: "2013–2021" },
-    { title: "С Земли на Луну", year: "1998" },
-    { title: "Война Фойла", year: "2002–2015" },
-    { title: "Гинтама", year: "2005–2021" },
-    { title: "Леттеркенни", year: "2016–2023" }
-];
-
-const boardGamesList = [
-    // Классические и вечные
-    "Chess",
-    "Backgammon",
-    "Go",
-    "Scrabble",
-
-    // Семейные и для вечеринок
-    "Carcassonne",
-    "Catan",
-    "Ticket to Ride",
-    "Dixit",
-    "Alias",
-    "Imaginarium",
-
-    // Стратегии и евроигры
-    "Terra Mystica",
-    "Swinus",
-    "7 Wonders",
-    "Everdell",
-    "War of the Ring",
-
-    // Кооперативные игры
-    "Pandemic",
-    "Arkham Horror",
-    "Gloomhaven",
-
-    // Для вечеринок и больших компаний
-    "Mafia",
-    "Codenames",
-    "EkiVoki",
-    "Jenga",
-    "Monopoly",
-
-    // Для любителей экшена и дуэлей
-    "Blood Rage",
-    "Nemesis",
-    "Undervault",
-
-    // Лёгкие и быстрые игры
-    "Kingdomino",
-    "Splendor",
-    "Patchwork",
-    "Set"
-];
-
-function generateBoardGame() {
-    const randomIndex = Math.floor(Math.random() * boardGamesList.length);
-    const boardGame = boardGamesList[randomIndex];
-    document.getElementById('randomgame').innerText = boardGame;
+// JavaScript
+//
+function choose_weird_place() {
+    const randomIndex = Math.floor(Math.random() * weird_places.length);
+    const weird_place = weird_places[randomIndex];
+    document.getElementById('total_random').innerText = weird_place;
 }
 
-function generatebestAlbums() {
-    const randomIndex = Math.floor(Math.random() * bestAlbums.length);
-    const bestAlbum = bestAlbums[randomIndex];
-    document.getElementById('randommusic').innerText = bestAlbum;
-}
-
-function generateSerial() {
-    const randomIndex = Math.floor(Math.random() * serialList.length);
-    const serial = serialList[randomIndex];
-
-    const to_show = `
-    ${serial.title}
-    ${serial.year}
-    `;
-
-    document.getElementById('randommovie').innerText = to_show;
+function choose_randomQuestions() {
+    const randomIndex = Math.floor(Math.random() * randomQuestions.length);
+    const r_question = randomQuestions[randomIndex];
+    document.getElementById('total_random').innerText = r_question;
 }
 
 
-function generateCountryForSpring() {
-    const randomIndex = Math.floor(Math.random() * springList.length);
-    const countryForSpring = springList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForSpring;
+function choose_selfdevelopment() {
+    const randomIndex = Math.floor(Math.random() * selfdevelopment.length);
+    const selfdevidea = selfdevelopment[randomIndex];
+    document.getElementById('random_self_dev_idea').innerText = selfdevidea;
 }
 
-function generateCountryForSpring() {
-    const randomIndex = Math.floor(Math.random() * springList.length);
-    const countryForSpring = springList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForSpring;
+function choose_travel_jan_feb() {
+    const randomIndex = Math.floor(Math.random() * travel_jan_feb.length);
+    const country = travel_jan_feb[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateCountryForSummer() {
-    const randomIndex = Math.floor(Math.random() * summerList.length);
-    const countryForSummer = summerList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForSummer;
+function choose_travel_mar_apr() {
+    const randomIndex = Math.floor(Math.random() * travel_mar_apr.length);
+    const country = travel_mar_apr[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateCountryForAutumn() {
-    const randomIndex = Math.floor(Math.random() * autumnList.length);
-    const countryForAutumn = autumnList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForAutumn;
+function choose_travel_may_jun() {
+    const randomIndex = Math.floor(Math.random() * travel_may_jun.length);
+    const country = travel_may_jun[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateCountryForWinter() {
-    const randomIndex = Math.floor(Math.random() * winterList.length);
-    const countryForWinter = winterList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForWinter;
+function choose_travel_jul_aug() {
+    const randomIndex = Math.floor(Math.random() * travel_jul_aug.length);
+    const country = travel_jul_aug[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateCountryForWinter() {
-    const randomIndex = Math.floor(Math.random() * winterList.length);
-    const countryForWinter = winterList[randomIndex];
-    document.getElementById('randomtravel').innerText = countryForWinter;
+function choose_travel_sep_oct() {
+    const randomIndex = Math.floor(Math.random() * travel_sep_oct.length);
+    const country = travel_sep_oct[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateDish() {
-    const randomIndex = Math.floor(Math.random() * dish_list.length);
-    const dish = dish_list[randomIndex];
-    document.getElementById('randomcuisine').innerText = dish;
+function choose_travel_nov_dec() {
+    const randomIndex = Math.floor(Math.random() * travel_nov_dec.length);
+    const country = travel_nov_dec[randomIndex];
+    document.getElementById('randomtravel').innerText = country;
 }
 
-function generateCuisine() {
-    const randomIndex = Math.floor(Math.random() * cuisine_list.length);
-    const cuisine = cuisine_list[randomIndex];
-    document.getElementById('randomcuisine').innerText = cuisine;
+function chooseGame_2010_2019() {
+    const randomIndex = Math.floor(Math.random() * greatgames_2010_2019.length);
+    const game = greatgames_2010_2019[randomIndex];
+    document.getElementById('randomgames').innerText = game;
+}
+
+
+function chooseGame_2020_2026() {
+    const randomIndex = Math.floor(Math.random() * greatgames_2020_2026.length);
+    const game = greatgames_2020_2026[randomIndex];
+    document.getElementById('randomgames').innerText = game;
 }
 
 
@@ -974,84 +527,22 @@ function generateBook() {
 }
 
 
-function generateMovie() {
-    const randomIndex = Math.floor(Math.random() * movie_list.length);
-    const movie = movie_list[randomIndex];
-    document.getElementById('randommovie').innerText = movie;
+function generateCuisine() {
+    const randomIndex = Math.floor(Math.random() * cuisine_list.length);
+    const randomcuisine = cuisine_list[randomIndex];
+    //    document.getElementById('randomcuisine').innerText = cuisine;
+    document.getElementById('randomcuisine').innerText = `${randomcuisine.cuisine} - ${randomcuisine.dish}`;
 }
 
-function generatePCGame() {
-    const genres = Object.keys(bestGamesByGenre); // Получаем все ключи (жанры)
-    const randomGenre = genres[Math.floor(Math.random() * genres.length)]; // Случайный жанр
-    const games = bestGamesByGenre[randomGenre]; // Игры из выбранного жанра
-    const randomGame = games[Math.floor(Math.random() * games.length)]; // Случайная игра из жанра
+//animate-ping-button
+document.querySelectorAll('.animate-ping-button').forEach(button => {
+  button.addEventListener('click', () => {
+    // Добавляем анимацию "ping"
+    button.classList.add('animate-ping');
 
-    document.getElementById('randomgame').innerText = randomGame;
-}
-
-const todoInput = document.getElementById('todoInput');
-const addBtn = document.getElementById('addBtn');
-const randomBtn = document.getElementById('randomBtn');
-const clearBtn = document.getElementById('clearBtn');
-const todoList = document.getElementById('todoList');
-const randomTodo = document.getElementById('randomTodo');
-
-// Массив для хранения дел
-const todos = [];
-
-// Добавление дела в список
-addBtn.addEventListener('click', () => {
-    const todoText = todoInput.value.trim();
-    if (todoText === '') {
-        alert('enter an item!!!');
-        return;
-    }
-
-    todos.push(todoText);
-
-    // Обновляем отображение списка дел
-    const li = document.createElement('li');
-    li.textContent = todoText;
-    todoList.appendChild(li);
-
-    // Очищаем поле ввода
-    todoInput.value = '';
-});
-
-// Выбор случайного дела
-randomBtn.addEventListener('click', () => {
-    if (todos.length === 0) {
-        alert('the list is clear!');
-        return;
-    }
-
-    const randomIndex = Math.floor(Math.random() * todos.length);
-    const selectedTodo = todos[randomIndex];
-    randomTodo.textContent = `Random item: ${selectedTodo}`;
-});
-
-// Очистка списка дел
-clearBtn.addEventListener('click', () => {
-    if (todos.length === 0) {
-        alert('the list is already clear!!');
-        return;
-    }
-
-    // Очищаем массив
-    todos.length = 0;
-
-    // Очищаем визуальное представление списка
-    todoList.innerHTML = '';
-
-    // Сбрасываем сообщение о случайном деле
-    randomTodo.textContent = '';
-
-    alert('the list was cleared!');
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const styles = ["shadow-dance-text", "melting-text"];
-    const randomStyle = styles[Math.floor(Math.random() * styles.length)];
-    document.getElementById("randomH1").classList.add(randomStyle);
+    // Удаляем анимацию после окончания (например, через 1 секунду)
+    setTimeout(() => {
+      button.classList.remove('animate-ping');
+    }, 1000);
+  });
 });
